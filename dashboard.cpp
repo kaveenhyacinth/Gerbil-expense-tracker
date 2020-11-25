@@ -22,28 +22,11 @@ Dashboard::~Dashboard()
 
 void Dashboard::on_btnAccountAdd_clicked()
 {
-    DbGateway db;
-    QSqlQuery qry;
-    QString accountName, accountBalance;
+    QString accountName = ui->txtAccountName->text();
+    int balance = ui->txtBalance->text().toInt();
 
-    accountName = ui->txtAccountName->text();
-    accountBalance = ui->txtBalance->text();
+    Account account(accountName, balance);
+    AccountController accountController;
 
-    if(!db.Connect()) {
-        qDebug() << "Failed to open the database connection";
-        return;
-    }
-    qry.prepare("INSERT INTO account (account_name, balance) VALUES (?, ?)");
-    qry.bindValue(0, accountName);
-    qry.bindValue(1, accountBalance.toInt());
-
-    if(qry.exec())
-    {
-        ui->lblConnection->setText("Account Saved..");
-        db.Disconnect();
-    }
-    else
-    {
-        ui->lblConnection->setText("Went Wrong...");
-    }
+    accountController.CreateAccount(account);
 }
