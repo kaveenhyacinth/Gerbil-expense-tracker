@@ -1,18 +1,15 @@
-#include "dashboard.h"
+﻿#include "dashboard.h"
 #include "ui_dashboard.h"
-#include "dbgateway.h"
+#include <QtDebug>
 
 Dashboard::Dashboard(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Dashboard)
 {
-    DbGateway db;
-
     ui->setupUi(this);
 
-    (db.Connect())
-            ? ui->lblConnection->setText("Connected...")
-            : ui->lblConnection->setText("Database connection failed...");
+    AccountController accountController;
+    accountController.ReadAccounts(ui->tblAccounts);
 }
 
 Dashboard::~Dashboard()

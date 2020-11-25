@@ -1,9 +1,9 @@
 #ifndef DASHBOARD_H
 #define DASHBOARD_H
 
-#include <QMainWindow>
 #include "account.h"
 #include "accountcontroller.h"
+#include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Dashboard; }

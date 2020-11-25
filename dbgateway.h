@@ -17,7 +17,6 @@ public:
 public:
     bool Connect();
     void Disconnect();
-    int couter();
     QSqlDatabase getDb();
 
 private:
