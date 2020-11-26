@@ -28,6 +28,8 @@ private slots:
     void on_btnAccountAdd_clicked();
     void on_btnAccountDelete_clicked();
 
+    void on_btnTrExAdd_clicked();
+
 private:
     Ui::Dashboard *ui;
 };
