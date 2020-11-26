@@ -1,6 +1,5 @@
 ﻿#include "dashboard.h"
 #include "ui_dashboard.h"
-#include <QtDebug>
 
 Dashboard::Dashboard(QWidget *parent)
     : QMainWindow(parent)
@@ -19,12 +18,12 @@ Dashboard::~Dashboard()
 
 void Dashboard::on_btnAccountAdd_clicked()
 {
+    Util util;
     QString accountName = ui->txtAccountName->text();
-    int balance = ui->txtBalance->text().toInt();
+    QString balance = util.FormatBalance(ui->txtBalance->text(), ui->txtBalanceCents->text());
 
     Account account(accountName, balance);
     AccountController accountController;
-
     accountController.CreateAccount(account);
     accountController.LoadData(ui->tblAccounts, ui->cmbDeleteAccount);
 }

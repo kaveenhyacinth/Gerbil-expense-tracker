@@ -13,13 +13,15 @@ SOURCES += \
     accountcontroller.cpp \
     dbgateway.cpp \
     main.cpp \
-    dashboard.cpp
+    dashboard.cpp \
+    util.cpp
 
 HEADERS += \
     account.h \
     accountcontroller.h \
     dashboard.h \
-    dbgateway.h
+    dbgateway.h \
+    util.h
 
 FORMS += \
     dashboard.ui

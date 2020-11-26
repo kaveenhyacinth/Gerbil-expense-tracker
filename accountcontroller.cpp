@@ -12,7 +12,7 @@ void AccountController::CreateAccount(Account account)
     QSqlQuery qry;
 
     QString accountName = account.getAccountName();
-    int accountBalance = account.getBalance();
+    QString accountBalance = account.getBalance();
 
     if(!db.Connect()) {
         qDebug() << "Failed to open the database connection";

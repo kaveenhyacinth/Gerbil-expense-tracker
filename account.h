@@ -6,13 +6,13 @@
 class Account
 {
 public:
-    Account(QString, int);
+    Account(QString, QString);
     QString getAccountName();
-    int getBalance();
+    QString getBalance();
 
 private:
     QString accountName;
-    int balance;
+    QString balance;
 };
 
 #endif // ACCOUNT_H
