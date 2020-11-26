@@ -9,7 +9,7 @@ Dashboard::Dashboard(QWidget *parent)
     ui->setupUi(this);
 
     AccountController accountController;
-    accountController.ReadAccounts(ui->tblAccounts);
+    accountController.LoadData(ui->tblAccounts, ui->cmbDeleteAccount);
 }
 
 Dashboard::~Dashboard()
@@ -26,4 +26,14 @@ void Dashboard::on_btnAccountAdd_clicked()
     AccountController accountController;
 
     accountController.CreateAccount(account);
+    accountController.LoadData(ui->tblAccounts, ui->cmbDeleteAccount);
+}
+
+void Dashboard::on_btnAccountDelete_clicked()
+{
+    QString accountName = ui->cmbDeleteAccount->currentText();
+
+    AccountController accountController;
+    accountController.DeleteAccount(accountName);
+    accountController.LoadData(ui->tblAccounts, ui->cmbDeleteAccount);
 }

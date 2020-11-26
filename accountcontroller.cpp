@@ -61,7 +61,63 @@ void AccountController::ReadAccounts(QTableView *tbl)
     qDebug() << (model->rowCount());
 }
 
+void AccountController::ReadAccounts(QComboBox *cmb)
+{
+    DbGateway db;
+    QSqlQuery *qry;
+    QSqlQueryModel *model;
 
+    if(!db.Connect()) {
+        qDebug() << "Failed to open the database connection";
+        return;
+    }
+
+    model = new QSqlQueryModel();
+    qry = new QSqlQuery(db.getDb());
+
+    qry->prepare("SELECT account_name FROM account ORDER BY _id");
+
+    if(!qry->exec())
+    {
+        qDebug() << "Something went wrong while fetching account details";
+        return;
+    }
+
+    model->setQuery(*qry);
+    cmb->setModel(model);
+    db.Disconnect();
+    qDebug() << (model->rowCount());
+}
+
+void AccountController::LoadData(QTableView *tbl, QComboBox *cmb)
+{
+    this->ReadAccounts(tbl);
+    this->ReadAccounts(cmb);
+}
+
+void AccountController::DeleteAccount(QString name)
+{
+    DbGateway db;
+    QSqlQuery qry;
+
+    if(!db.Connect()) {
+        qDebug() << "Failed to open the database connection";
+        return;
+    }
+
+    qry.prepare("DELETE FROM account WHERE account_name = ?");
+    qry.bindValue(0, name);
+
+    if(!qry.exec())
+    {
+        qDebug() << "Something went wrong while deleting the account";
+        return;
+    }
+
+
+    db.Disconnect();
+    qDebug() << "Account " << name << " has been deleted";
+}
 
 
 

@@ -20,6 +20,8 @@ public:
 private slots:
     void on_btnAccountAdd_clicked();
 
+    void on_btnAccountDelete_clicked();
+
 private:
     Ui::Dashboard *ui;
 };

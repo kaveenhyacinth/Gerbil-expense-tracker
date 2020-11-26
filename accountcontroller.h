@@ -3,6 +3,7 @@
 
 #include "account.h"
 #include <QTableView>
+#include <QComboBox>
 
 class AccountController
 {
@@ -11,8 +12,10 @@ public:
 
 public:
     void CreateAccount(Account);
-    void DeleteAccount(int);
+    void DeleteAccount(QString);
     void ReadAccounts(QTableView *);
+    void ReadAccounts(QComboBox *);
+    void LoadData(QTableView *, QComboBox *);
 };
 
 #endif // ACCOUNTCONTROLLER_H
