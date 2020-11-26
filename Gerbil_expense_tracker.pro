@@ -14,6 +14,8 @@ SOURCES += \
     dbgateway.cpp \
     main.cpp \
     dashboard.cpp \
+    transaction.cpp \
+    transactioncontroller.cpp \
     util.cpp
 
 HEADERS += \
@@ -21,6 +23,8 @@ HEADERS += \
     accountcontroller.h \
     dashboard.h \
     dbgateway.h \
+    transaction.h \
+    transactioncontroller.h \
     util.h
 
 FORMS += \

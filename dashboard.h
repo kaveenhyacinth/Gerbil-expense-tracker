@@ -3,7 +3,10 @@
 
 #include "util.h"
 #include "account.h"
+#include "transaction.h"
 #include "accountcontroller.h"
+#include "transactioncontroller.h"
+
 #include <QMainWindow>
 #include <QtDebug>
 
@@ -23,6 +26,8 @@ private slots:
     void on_btnAccountAdd_clicked();
 
     void on_btnAccountDelete_clicked();
+
+    void on_btnTrInAdd_clicked();
 
 private:
     Ui::Dashboard *ui;
