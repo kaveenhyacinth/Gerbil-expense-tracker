@@ -11,6 +11,7 @@ CONFIG += c++11
 SOURCES += \
     account.cpp \
     accountcontroller.cpp \
+    dataadapter.cpp \
     dbgateway.cpp \
     main.cpp \
     dashboard.cpp \
@@ -22,6 +23,7 @@ HEADERS += \
     account.h \
     accountcontroller.h \
     dashboard.h \
+    dataadapter.h \
     dbgateway.h \
     transaction.h \
     transactioncontroller.h \

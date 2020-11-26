@@ -5,10 +5,12 @@ Dashboard::Dashboard(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Dashboard)
 {
-    AccountController accountController;
+    DataAdapter adapter;
 
     ui->setupUi(this);
-    accountController.LoadData(ui->tblAccounts, ui->cmbDeleteAccount);
+    adapter.LoadAccountData(ui->tblAccounts, ui->cmbDeleteAccount);
+    adapter.LoadTransactionData
+            (ui->tblTransactions, ui->cmbTrInAccount, ui->cmbTrInCategory, ui->cmbTrExAccount, ui->cmbTrExCategory);
 }
 
 Dashboard::~Dashboard()
@@ -23,18 +25,24 @@ void Dashboard::on_btnAccountAdd_clicked()
     QString balance = util.FormatBalance(ui->txtBalance->text(), ui->txtBalanceCents->text());
     Account account(accountName, balance);
     AccountController accountController;
+    DataAdapter adapter;
 
     accountController.CreateAccount(account);
-    accountController.LoadData(ui->tblAccounts, ui->cmbDeleteAccount);
+    adapter.LoadAccountData(ui->tblAccounts, ui->cmbDeleteAccount);
+    adapter.LoadTransactionData
+            (ui->tblTransactions, ui->cmbTrInAccount, ui->cmbTrInCategory, ui->cmbTrExAccount, ui->cmbTrExCategory);
 }
 
 void Dashboard::on_btnAccountDelete_clicked()
 {
     QString accountName = ui->cmbDeleteAccount->currentText();
     AccountController accountController;
+    DataAdapter adapter;
 
     accountController.DeleteAccount(accountName);
-    accountController.LoadData(ui->tblAccounts, ui->cmbDeleteAccount);
+    adapter.LoadAccountData(ui->tblAccounts, ui->cmbDeleteAccount);
+    adapter.LoadTransactionData
+            (ui->tblTransactions, ui->cmbTrInAccount, ui->cmbTrInCategory, ui->cmbTrExAccount, ui->cmbTrExCategory);
 }
 
 void Dashboard::on_btnTrInAdd_clicked()
@@ -44,10 +52,14 @@ void Dashboard::on_btnTrInAdd_clicked()
     int accountId = transactionController.ParseAccountId(ui->cmbTrInAccount->currentText());
     int categoryId = transactionController.ParseCategoryId(ui->cmbTrInCategory->currentText());
     QString amount = util.FormatBalance(ui->txtTrInAmount->text(), ui->txtTrInCents->text());
-    QString type = "I";
+    QString type = "INCOME";
     QDate date = ui->dtTrInDate->date();
     Transaction transaction(accountId, categoryId, type, amount, date);
+    DataAdapter adapter;
 
     transactionController.CreateTransaction(transaction);
+    adapter.LoadAccountData(ui->tblAccounts, ui->cmbDeleteAccount);
+    adapter.LoadTransactionData
+            (ui->tblTransactions, ui->cmbTrInAccount, ui->cmbTrInCategory, ui->cmbTrExAccount, ui->cmbTrExCategory);
 
 }

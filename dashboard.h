@@ -3,12 +3,13 @@
 
 #include "util.h"
 #include "account.h"
+#include "dataadapter.h"
 #include "transaction.h"
 #include "accountcontroller.h"
 #include "transactioncontroller.h"
 
-#include <QMainWindow>
 #include <QtDebug>
+#include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Dashboard; }
@@ -23,11 +24,9 @@ public:
     ~Dashboard();
 
 private slots:
-    void on_btnAccountAdd_clicked();
-
-    void on_btnAccountDelete_clicked();
-
     void on_btnTrInAdd_clicked();
+    void on_btnAccountAdd_clicked();
+    void on_btnAccountDelete_clicked();
 
 private:
     Ui::Dashboard *ui;

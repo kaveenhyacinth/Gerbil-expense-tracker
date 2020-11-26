@@ -13,9 +13,6 @@ public:
 public:
     void CreateAccount(Account);
     void DeleteAccount(QString);
-    void ReadAccounts(QTableView *);
-    void ReadAccounts(QComboBox *);
-    void LoadData(QTableView *, QComboBox *);
 };
 
 #endif // ACCOUNTCONTROLLER_H

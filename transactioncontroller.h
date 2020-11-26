@@ -12,10 +12,6 @@ public:
 
 public:
     void CreateTransaction(Transaction);
-    void ReadTransactions(QTableView*);
-    void ReadAccounts(QComboBox*);
-    void ReadCategories(QComboBox*);
-    void LoadData(QTableView*, QComboBox*, QComboBox*);
     int ParseCategoryId(QString);
     int ParseAccountId(QString);
 };
