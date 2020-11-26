@@ -15,7 +15,7 @@ void AccountController::CreateAccount(Account account)
     QString accountBalance = account.getBalance();
 
     if(!db.Connect()) {
-        qDebug() << "Failed to open the database connection";
+        qDebug() << "Failed to open the database connection @ CreateAccount";
         return;
     }
 
@@ -39,7 +39,7 @@ void AccountController::DeleteAccount(QString name)
     QSqlQuery qry;
 
     if(!db.Connect()) {
-        qDebug() << "Failed to open the database connection";
+        qDebug() << "Failed to open the database connection @ DeleteAccount";
         return;
     }
 

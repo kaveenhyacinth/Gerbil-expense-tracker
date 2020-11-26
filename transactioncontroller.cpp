@@ -13,7 +13,7 @@ int TransactionController::ParseAccountId(QString account)
     int accountId;
 
     if(!db.Connect()) {
-        qDebug() << "Failed to open the database connection";
+        qDebug() << "Failed to open the database connection @ ParseAccountId";
         return -1;
     }
 
@@ -43,7 +43,7 @@ int TransactionController::ParseCategoryId(QString category)
     int categoryId;
 
     if(!db.Connect()) {
-        qDebug() << "Failed to open the database connection";
+        qDebug() << "Failed to open the database connection @ ParseCategoryId";
         return -1;
     }
 
@@ -77,7 +77,7 @@ void TransactionController::CreateTransaction(Transaction transaction)
     QDate date = transaction.getDate();
 
     if(!db.Connect()) {
-        qDebug() << "Failed to open the database connection";
+        qDebug() << "Failed to open the database connection @ CreateTransaction";
         return;
     }
 

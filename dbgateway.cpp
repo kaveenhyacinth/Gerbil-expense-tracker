@@ -22,7 +22,7 @@ bool DbGateway::Connect()
     }
     else
     {
-        qDebug() << "Failed to open the database connection";
+        qDebug() << "Failed to open the database connection @ Connect";
         return false;
     }
 }

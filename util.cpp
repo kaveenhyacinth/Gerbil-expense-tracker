@@ -27,8 +27,10 @@ QStringList Util::SplitBalance(QString balance)
     return list;
 }
 
-int Util::FormatMoney(QStringList list)
+// Convert formatted balance into integer money
+int Util::FormatMoney(QString balance)
 {
+    QStringList list = balance.split(".");
     int amount = list.at(0).toInt();
     int cents = list.at(1).toInt();
     int money = (amount * 100) + cents;

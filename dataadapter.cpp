@@ -1,5 +1,6 @@
 #include "dataadapter.h"
 #include "dbgateway.h"
+#include "util.h"
 
 DataAdapter::DataAdapter()
 {
@@ -13,7 +14,7 @@ void DataAdapter::ReadAccounts(QTableView *tbl)
     QSqlQueryModel *model;
 
     if(!db.Connect()) {
-        qDebug() << "Failed to open the database connection";
+        qDebug() << "Failed to open the database connection @ ReadAccounts";
         return;
     }
 
@@ -31,7 +32,6 @@ void DataAdapter::ReadAccounts(QTableView *tbl)
     model->setQuery(*qry);
     tbl->setModel(model);
     db.Disconnect();
-    qDebug() << (model->rowCount());
 }
 
 void DataAdapter::ReadTransactions(QTableView *tbl)
@@ -41,7 +41,7 @@ void DataAdapter::ReadTransactions(QTableView *tbl)
     QSqlQueryModel *model;
 
     if(!db.Connect()) {
-        qDebug() << "Failed to open the database connection";
+        qDebug() << "Failed to open the database connection @ ReadTransactions";
         return;
     }
 
@@ -66,7 +66,6 @@ void DataAdapter::ReadTransactions(QTableView *tbl)
     model->setQuery(*qry);
     tbl->setModel(model);
     db.Disconnect();
-    qDebug() << (model->rowCount());
 }
 
 void DataAdapter::ReadAccounts(QComboBox *cmb)
@@ -76,7 +75,7 @@ void DataAdapter::ReadAccounts(QComboBox *cmb)
     QSqlQueryModel *model;
 
     if(!db.Connect()) {
-        qDebug() << "Failed to open the database connection";
+        qDebug() << "Failed to open the database connection @ ReadAccounts";
         return;
     }
 
@@ -94,7 +93,6 @@ void DataAdapter::ReadAccounts(QComboBox *cmb)
     model->setQuery(*qry);
     cmb->setModel(model);
     db.Disconnect();
-    qDebug() << (model->rowCount());
 }
 
 void DataAdapter::ReadCategories(QComboBox *cmb)
@@ -104,7 +102,7 @@ void DataAdapter::ReadCategories(QComboBox *cmb)
     QSqlQueryModel *model;
 
     if(!db.Connect()) {
-        qDebug() << "Failed to open the database connection";
+        qDebug() << "Failed to open the database connection @ ReadCategories";
         return;
     }
 
@@ -122,7 +120,90 @@ void DataAdapter::ReadCategories(QComboBox *cmb)
     model->setQuery(*qry);
     cmb->setModel(model);
     db.Disconnect();
-    qDebug() << (model->rowCount());
+}
+
+int DataAdapter::ParseAccountBalance(int accountId)
+{
+    Util util;
+    DbGateway tempdb;
+    QSqlQuery tempqry;
+    QString balanceStr;
+    int balance;
+
+    if(!tempdb.Connect()) {
+        qDebug() << "Failed to open the database connection @ ParseAccountBalance";
+        return -1;
+    }
+
+    tempqry.prepare("SELECT balance FROM account WHERE _id = ?");
+    tempqry.bindValue(0, accountId);
+
+    if(!tempqry.exec())
+    {
+        qDebug() << "Something went wrong while parsing account balance";
+        return -1;
+    }
+
+    while (tempqry.next())
+    {
+        balanceStr = tempqry.value(0).toString();
+    }
+
+    balance = util.FormatMoney(balanceStr);
+    tempdb.Disconnect();
+    qDebug() << "Parsed account balance" << balance;
+    return balance;
+
+}
+
+void DataAdapter::UpdateAccountIncome(int accountId, int incomeBalance)
+{
+    Util util;
+    DbGateway db;
+    QSqlQuery qry;
+    QSqlQuery tempqry;
+    QString tempBalanceStr;
+    QString balanceStr;
+    int tempBalance;
+    int balance;
+
+    if(!db.Connect()) {
+        qDebug() << "Failed to open the database connection @ UpdateAccountIncome";
+        return;
+    }
+
+    tempqry.prepare("SELECT balance FROM account WHERE _id = ?");
+    tempqry.bindValue(0, accountId);
+
+    if(!tempqry.exec())
+    {
+        qDebug() << "Something went wrong while parsing account balance";
+        return;
+    }
+
+    while (tempqry.next())
+    {
+        tempBalanceStr = tempqry.value(0).toString();
+    }
+
+    tempBalance = util.FormatMoney(tempBalanceStr);
+    balance = tempBalance + incomeBalance;
+    balanceStr = util.FormatBalance(balance);
+
+    qDebug() << "New account balance" << balanceStr;
+
+    qry.prepare("UPDATE account SET balance = ? WHERE _id = ?");
+    qry.bindValue(0, balanceStr);
+    qry.bindValue(1, accountId);
+
+    if(!qry.exec())
+    {
+        qDebug() << "Something went wrong while updating account balance";
+        return;
+    }
+
+    db.Disconnect();
+    qDebug() << "Account balance updated";
 }
 
 void DataAdapter::LoadAccountData(QTableView *tbl, QComboBox *cmb)

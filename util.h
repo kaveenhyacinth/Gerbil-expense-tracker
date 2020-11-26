@@ -13,7 +13,7 @@ public:
     QString FormatBalance(QString, QString);
     QString FormatBalance(int);
     QStringList SplitBalance(QString);
-    int FormatMoney(QStringList);
+    int FormatMoney(QString);
 
 };
 

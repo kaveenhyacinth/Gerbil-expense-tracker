@@ -58,6 +58,7 @@ void Dashboard::on_btnTrInAdd_clicked()
     DataAdapter adapter;
 
     transactionController.CreateTransaction(transaction);
+    adapter.UpdateAccountIncome(accountId, util.FormatMoney(amount));
     adapter.LoadAccountData(ui->tblAccounts, ui->cmbDeleteAccount);
     adapter.LoadTransactionData
             (ui->tblTransactions, ui->cmbTrInAccount, ui->cmbTrInCategory, ui->cmbTrExAccount, ui->cmbTrExCategory);
