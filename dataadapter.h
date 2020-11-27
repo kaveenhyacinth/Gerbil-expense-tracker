@@ -16,8 +16,8 @@ public:
     void ReadTransactions(QTableView*);
     void LoadAccountData(QTableView *, QComboBox *);
     void LoadTransactionData(QTableView*, QComboBox*, QComboBox*, QComboBox*, QComboBox*);
-    int ParseAccountBalance(int);
-    void UpdateAccountIncome(int, int);
+    bool UpdateAccountIncome(int, int);
+    bool UpdateAccountExpense(int, int);
 };
 
 #endif // DATAADAPTER_H

@@ -2,6 +2,8 @@
 #include "dbgateway.h"
 #include "util.h"
 
+#include <QMessageBox>
+
 DataAdapter::DataAdapter()
 {
 
@@ -122,41 +124,7 @@ void DataAdapter::ReadCategories(QComboBox *cmb)
     db.Disconnect();
 }
 
-int DataAdapter::ParseAccountBalance(int accountId)
-{
-    Util util;
-    DbGateway tempdb;
-    QSqlQuery tempqry;
-    QString balanceStr;
-    int balance;
-
-    if(!tempdb.Connect()) {
-        qDebug() << "Failed to open the database connection @ ParseAccountBalance";
-        return -1;
-    }
-
-    tempqry.prepare("SELECT balance FROM account WHERE _id = ?");
-    tempqry.bindValue(0, accountId);
-
-    if(!tempqry.exec())
-    {
-        qDebug() << "Something went wrong while parsing account balance";
-        return -1;
-    }
-
-    while (tempqry.next())
-    {
-        balanceStr = tempqry.value(0).toString();
-    }
-
-    balance = util.FormatMoney(balanceStr);
-    tempdb.Disconnect();
-    qDebug() << "Parsed account balance" << balance;
-    return balance;
-
-}
-
-void DataAdapter::UpdateAccountIncome(int accountId, int incomeBalance)
+bool DataAdapter::UpdateAccountIncome(int accountId, int incomeBalance)
 {
     Util util;
     DbGateway db;
@@ -169,7 +137,7 @@ void DataAdapter::UpdateAccountIncome(int accountId, int incomeBalance)
 
     if(!db.Connect()) {
         qDebug() << "Failed to open the database connection @ UpdateAccountIncome";
-        return;
+        return false;
     }
 
     tempqry.prepare("SELECT balance FROM account WHERE _id = ?");
@@ -178,7 +146,7 @@ void DataAdapter::UpdateAccountIncome(int accountId, int incomeBalance)
     if(!tempqry.exec())
     {
         qDebug() << "Something went wrong while parsing account balance";
-        return;
+        return false;
     }
 
     while (tempqry.next())
@@ -199,12 +167,78 @@ void DataAdapter::UpdateAccountIncome(int accountId, int incomeBalance)
     if(!qry.exec())
     {
         qDebug() << "Something went wrong while updating account balance";
-        return;
+        return false;
     }
 
     db.Disconnect();
     qDebug() << "Account balance updated";
+    return true;
 }
+
+bool DataAdapter::UpdateAccountExpense(int accountId, int expenseBalance)
+{
+    Util util;
+    DbGateway db;
+    QSqlQuery qry;
+    QSqlQuery tempqry;
+    QString tempBalanceStr;
+    QString balanceStr;
+    int tempBalance;
+    int balance;
+
+    if(!db.Connect()) {
+        qDebug() << "Failed to open the database connection @ UpdateAccountIncome";
+        return false;
+    }
+
+    tempqry.prepare("SELECT balance FROM account WHERE _id = ?");
+    tempqry.bindValue(0, accountId);
+
+    if(!tempqry.exec())
+    {
+        qDebug() << "Something went wrong while parsing account balance";
+        return false;
+    }
+
+    while (tempqry.next())
+    {
+        tempBalanceStr = tempqry.value(0).toString();
+    }
+
+    tempBalance = util.FormatMoney(tempBalanceStr);
+
+    if(tempBalance < expenseBalance)
+    {
+        qDebug() << "Account has not enough funds";
+        QMessageBox msgBox;
+        msgBox.setWindowTitle("Transaction Denied!");
+        msgBox.setIcon(QMessageBox::Critical);
+        msgBox.setText("Selected account has not enough funds, Please select another account or add more funds");
+        msgBox.exec();
+        return false;
+    }
+
+
+    balance = tempBalance - expenseBalance;
+    balanceStr = util.FormatBalance(balance);
+
+    qDebug() << "New account balance" << balanceStr;
+
+    qry.prepare("UPDATE account SET balance = ? WHERE _id = ?");
+    qry.bindValue(0, balanceStr);
+    qry.bindValue(1, accountId);
+
+    if(!qry.exec())
+    {
+        qDebug() << "Something went wrong while updating account balance";
+        return false;
+    }
+
+    db.Disconnect();
+    qDebug() << "Account balance updated";
+    return true;
+}
+
 
 void DataAdapter::LoadAccountData(QTableView *tbl, QComboBox *cmb)
 {
