@@ -12,6 +12,8 @@ Dashboard::Dashboard(QWidget *parent)
     ui->setupUi(this);
     ui->dtTrInDate->setDate(QDate::currentDate());
     ui->dtTrExDate->setDate(QDate::currentDate());
+    ui->lblIncome->setText(adapter.FetchTotalByType("INCOME"));
+    ui->lblExpense->setText(adapter.FetchTotalByType("EXPENSE"));
 
     adapter.LoadAccountData(ui->tblAccounts, ui->cmbDeleteAccount);
     adapter.LoadTransactionData
@@ -43,6 +45,7 @@ void Dashboard::on_btnAccountAdd_clicked()
     DataAdapter adapter;
 
     accountController.CreateAccount(account);
+
     adapter.LoadAccountData(ui->tblAccounts, ui->cmbDeleteAccount);
     adapter.LoadTransactionData
             (ui->tblTransactions, ui->cmbTrInAccount, ui->cmbTrInCategory, ui->cmbTrExAccount, ui->cmbTrExCategory);
@@ -61,10 +64,13 @@ void Dashboard::on_btnAccountDelete_clicked()
     if(ret != QMessageBox::Yes) return;
 
     QString accountName = ui->cmbDeleteAccount->currentText();
+    TransactionController transactionController;
     AccountController accountController;
     DataAdapter adapter;
 
     accountController.DeleteAccount(accountName);
+    transactionController.DeleteTransactionByAccount(transactionController.ParseAccountId(accountName));
+
     adapter.LoadAccountData(ui->tblAccounts, ui->cmbDeleteAccount);
     adapter.LoadTransactionData
             (ui->tblTransactions, ui->cmbTrInAccount, ui->cmbTrInCategory, ui->cmbTrExAccount, ui->cmbTrExCategory);
@@ -89,6 +95,9 @@ void Dashboard::on_btnTrInAdd_clicked()
     adapter.LoadTransactionData
             (ui->tblTransactions, ui->cmbTrInAccount, ui->cmbTrInCategory, ui->cmbTrExAccount, ui->cmbTrExCategory);
 
+    ui->lblIncome->setText(adapter.FetchTotalByType("INCOME"));
+    ui->lblExpense->setText(adapter.FetchTotalByType("EXPENSE"));
+
 }
 
 void Dashboard::on_btnTrExAdd_clicked()
@@ -109,4 +118,7 @@ void Dashboard::on_btnTrExAdd_clicked()
     adapter.LoadAccountData(ui->tblAccounts, ui->cmbDeleteAccount);
     adapter.LoadTransactionData
             (ui->tblTransactions, ui->cmbTrInAccount, ui->cmbTrInCategory, ui->cmbTrExAccount, ui->cmbTrExCategory);
+
+    ui->lblIncome->setText(adapter.FetchTotalByType("INCOME"));
+    ui->lblExpense->setText(adapter.FetchTotalByType("EXPENSE"));
 }

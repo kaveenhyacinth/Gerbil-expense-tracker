@@ -14,6 +14,7 @@ public:
     void CreateTransaction(Transaction);
     int ParseCategoryId(QString);
     int ParseAccountId(QString);
+    void DeleteTransactionByAccount(int accountId);
 };
 
 #endif // TRANSACTIONCONTROLLER_H

@@ -18,6 +18,7 @@ bool DbGateway::Connect()
     if(db.open())
     {
         qDebug() << "Database connected...";
+
         return true;
     }
     else

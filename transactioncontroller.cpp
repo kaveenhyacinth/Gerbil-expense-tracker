@@ -98,3 +98,26 @@ void TransactionController::CreateTransaction(Transaction transaction)
     db.Disconnect();
 
 }
+
+void TransactionController::DeleteTransactionByAccount(int accountId)
+{
+    DbGateway db;
+    QSqlQuery qry;
+
+    if(!db.Connect()) {
+        qDebug() << "Failed to open the database connection @ DeleteTransactionByAccount";
+        return;
+    }
+
+    qry.prepare("DELETE FROM record WHERE account_id = ?");
+    qry.bindValue(0, accountId);
+
+    if(!qry.exec())
+    {
+        qDebug() << "Transaction deletion Went Wrong...";
+        return;
+    }
+
+    qDebug() << "Transactions deleted";
+    db.Disconnect();
+}

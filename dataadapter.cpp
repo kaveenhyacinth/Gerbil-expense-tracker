@@ -239,6 +239,38 @@ bool DataAdapter::UpdateAccountExpense(int accountId, int expenseBalance)
     return true;
 }
 
+QString DataAdapter::FetchTotalByType(QString recordType)
+{
+    Util util;
+    DbGateway db;
+    QSqlQuery qry;
+    QString totalBalance;
+    int tempBalance = 0;
+
+    if(!db.Connect()) {
+        qDebug() << "Failed to open the database connection @ FetchTotalIncome";
+        return "";
+    }
+
+    qry.prepare("SELECT amount FROM record WHERE record_type = ?");
+    qry.bindValue(0, recordType);
+
+    if(!qry.exec())
+    {
+        qDebug() << "Something went wrong while fetching total " << recordType << " details";
+        return "";
+    }
+
+    while (qry.next())
+    {
+         tempBalance += util.FormatMoney(qry.value(0).toString());
+    }
+
+    totalBalance = util.FormatBalance(tempBalance);
+    db.Disconnect();
+    return totalBalance;
+}
+
 
 void DataAdapter::LoadAccountData(QTableView *tbl, QComboBox *cmb)
 {
