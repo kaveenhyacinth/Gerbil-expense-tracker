@@ -114,10 +114,10 @@ void TransactionController::DeleteTransactionByAccount(int accountId)
 
     if(!qry.exec())
     {
-        qDebug() << "Transaction deletion Went Wrong...";
+        qDebug() << "Transaction of " << accountId << " deletion Went Wrong...";
         return;
     }
 
-    qDebug() << "Transactions deleted";
+    qDebug() << "Transactions of " << accountId << " has been deleted";
     db.Disconnect();
 }

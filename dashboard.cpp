@@ -49,6 +49,9 @@ void Dashboard::on_btnAccountAdd_clicked()
     adapter.LoadAccountData(ui->tblAccounts, ui->cmbDeleteAccount);
     adapter.LoadTransactionData
             (ui->tblTransactions, ui->cmbTrInAccount, ui->cmbTrInCategory, ui->cmbTrExAccount, ui->cmbTrExCategory);
+
+    ui->lblIncome->setText(adapter.FetchTotalByType("INCOME"));
+    ui->lblExpense->setText(adapter.FetchTotalByType("EXPENSE"));
 }
 
 void Dashboard::on_btnAccountDelete_clicked()
@@ -68,12 +71,15 @@ void Dashboard::on_btnAccountDelete_clicked()
     AccountController accountController;
     DataAdapter adapter;
 
-    accountController.DeleteAccount(accountName);
     transactionController.DeleteTransactionByAccount(transactionController.ParseAccountId(accountName));
+    accountController.DeleteAccount(accountName);
 
     adapter.LoadAccountData(ui->tblAccounts, ui->cmbDeleteAccount);
     adapter.LoadTransactionData
             (ui->tblTransactions, ui->cmbTrInAccount, ui->cmbTrInCategory, ui->cmbTrExAccount, ui->cmbTrExCategory);
+
+    ui->lblIncome->setText(adapter.FetchTotalByType("INCOME"));
+    ui->lblExpense->setText(adapter.FetchTotalByType("EXPENSE"));
 }
 
 void Dashboard::on_btnTrInAdd_clicked()
