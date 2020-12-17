@@ -46,6 +46,16 @@
        </attribute>
        <layout class="QHBoxLayout" name="horizontalLayout_9">
         <item>
+         <widget class="QLabel" name="lblTotal">
+          <property name="text">
+           <string>Total</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
          <widget class="QLabel" name="lblIncome">
           <property name="text">
            <string>Income</string>

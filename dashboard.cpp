@@ -14,6 +14,7 @@ Dashboard::Dashboard(QWidget *parent)
     ui->dtTrExDate->setDate(QDate::currentDate());
     ui->lblIncome->setText(adapter.FetchTotalByType("INCOME"));
     ui->lblExpense->setText(adapter.FetchTotalByType("EXPENSE"));
+    ui->lblTotal->setText(adapter.FetchTotalBalance());
 
     adapter.LoadAccountData(ui->tblAccounts, ui->cmbDeleteAccount);
     adapter.LoadTransactionData
@@ -52,6 +53,7 @@ void Dashboard::on_btnAccountAdd_clicked()
 
     ui->lblIncome->setText(adapter.FetchTotalByType("INCOME"));
     ui->lblExpense->setText(adapter.FetchTotalByType("EXPENSE"));
+    ui->lblTotal->setText(adapter.FetchTotalBalance());
 }
 
 void Dashboard::on_btnAccountDelete_clicked()
@@ -80,6 +82,7 @@ void Dashboard::on_btnAccountDelete_clicked()
 
     ui->lblIncome->setText(adapter.FetchTotalByType("INCOME"));
     ui->lblExpense->setText(adapter.FetchTotalByType("EXPENSE"));
+    ui->lblTotal->setText(adapter.FetchTotalBalance());
 }
 
 void Dashboard::on_btnTrInAdd_clicked()
@@ -103,7 +106,7 @@ void Dashboard::on_btnTrInAdd_clicked()
 
     ui->lblIncome->setText(adapter.FetchTotalByType("INCOME"));
     ui->lblExpense->setText(adapter.FetchTotalByType("EXPENSE"));
-
+    ui->lblTotal->setText(adapter.FetchTotalBalance());
 }
 
 void Dashboard::on_btnTrExAdd_clicked()
@@ -127,4 +130,5 @@ void Dashboard::on_btnTrExAdd_clicked()
 
     ui->lblIncome->setText(adapter.FetchTotalByType("INCOME"));
     ui->lblExpense->setText(adapter.FetchTotalByType("EXPENSE"));
+    ui->lblTotal->setText(adapter.FetchTotalBalance());
 }

@@ -19,6 +19,7 @@ public:
     bool UpdateAccountIncome(int, int);
     bool UpdateAccountExpense(int, int);
     QString FetchTotalByType(QString recordType);
+    QString FetchTotalBalance();
 };
 
 #endif // DATAADAPTER_H
