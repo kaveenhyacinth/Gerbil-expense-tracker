@@ -12,6 +12,7 @@ SOURCES += \
     account.cpp \
     accountcontroller.cpp \
     dataadapter.cpp \
+    datavisualizer.cpp \
     dbgateway.cpp \
     main.cpp \
     dashboard.cpp \
@@ -24,6 +25,7 @@ HEADERS += \
     accountcontroller.h \
     dashboard.h \
     dataadapter.h \
+    datavisualizer.h \
     dbgateway.h \
     transaction.h \
     transactioncontroller.h \
