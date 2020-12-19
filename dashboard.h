@@ -5,6 +5,7 @@
 #include "account.h"
 #include "dataadapter.h"
 #include "transaction.h"
+#include "datavisualizer.h"
 #include "accountcontroller.h"
 #include "transactioncontroller.h"
 

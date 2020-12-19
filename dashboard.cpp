@@ -8,17 +8,18 @@ Dashboard::Dashboard(QWidget *parent)
     , ui(new Ui::Dashboard)
 {
     DataAdapter adapter;
+    DataVisualizer visual;
 
     ui->setupUi(this);
     ui->dtTrInDate->setDate(QDate::currentDate());
     ui->dtTrExDate->setDate(QDate::currentDate());
-    ui->lblIncome->setText(adapter.FetchTotalByType("INCOME"));
-    ui->lblExpense->setText(adapter.FetchTotalByType("EXPENSE"));
-    ui->lblTotal->setText(adapter.FetchTotalBalance());
 
     adapter.LoadAccountData(ui->tblAccounts, ui->cmbDeleteAccount);
     adapter.LoadTransactionData
             (ui->tblTransactions, ui->cmbTrInAccount, ui->cmbTrInCategory, ui->cmbTrExAccount, ui->cmbTrExCategory);
+    visual.RenderChart(ui->frmChart, adapter.FetchTotalByType("INCOME"), adapter.FetchTotalByType("EXPENSE"));
+
+    ui->lblTotal->setText(adapter.FetchTotalBalance());
 }
 
 Dashboard::~Dashboard()
@@ -39,6 +40,7 @@ void Dashboard::on_btnAccountAdd_clicked()
     if(ret != QMessageBox::Yes) return;
 
     Util util;
+    DataVisualizer visual;
     QString accountName = ui->txtAccountName->text();
     QString balance = util.FormatBalance(ui->txtBalance->text(), ui->txtBalanceCents->text());
     Account account(accountName, balance);
@@ -50,9 +52,8 @@ void Dashboard::on_btnAccountAdd_clicked()
     adapter.LoadAccountData(ui->tblAccounts, ui->cmbDeleteAccount);
     adapter.LoadTransactionData
             (ui->tblTransactions, ui->cmbTrInAccount, ui->cmbTrInCategory, ui->cmbTrExAccount, ui->cmbTrExCategory);
+    visual.RenderChart(ui->frmChart, adapter.FetchTotalByType("INCOME"), adapter.FetchTotalByType("EXPENSE"));
 
-    ui->lblIncome->setText(adapter.FetchTotalByType("INCOME"));
-    ui->lblExpense->setText(adapter.FetchTotalByType("EXPENSE"));
     ui->lblTotal->setText(adapter.FetchTotalBalance());
 }
 
@@ -68,6 +69,7 @@ void Dashboard::on_btnAccountDelete_clicked()
 
     if(ret != QMessageBox::Yes) return;
 
+    DataVisualizer visual;
     QString accountName = ui->cmbDeleteAccount->currentText();
     TransactionController transactionController;
     AccountController accountController;
@@ -79,15 +81,15 @@ void Dashboard::on_btnAccountDelete_clicked()
     adapter.LoadAccountData(ui->tblAccounts, ui->cmbDeleteAccount);
     adapter.LoadTransactionData
             (ui->tblTransactions, ui->cmbTrInAccount, ui->cmbTrInCategory, ui->cmbTrExAccount, ui->cmbTrExCategory);
+    visual.RenderChart(ui->frmChart, adapter.FetchTotalByType("INCOME"), adapter.FetchTotalByType("EXPENSE"));
 
-    ui->lblIncome->setText(adapter.FetchTotalByType("INCOME"));
-    ui->lblExpense->setText(adapter.FetchTotalByType("EXPENSE"));
     ui->lblTotal->setText(adapter.FetchTotalBalance());
 }
 
 void Dashboard::on_btnTrInAdd_clicked()
 {
     Util util;
+    DataVisualizer visual;
     TransactionController transactionController;
     int accountId = transactionController.ParseAccountId(ui->cmbTrInAccount->currentText());
     int categoryId = transactionController.ParseCategoryId(ui->cmbTrInCategory->currentText());
@@ -103,15 +105,15 @@ void Dashboard::on_btnTrInAdd_clicked()
     adapter.LoadAccountData(ui->tblAccounts, ui->cmbDeleteAccount);
     adapter.LoadTransactionData
             (ui->tblTransactions, ui->cmbTrInAccount, ui->cmbTrInCategory, ui->cmbTrExAccount, ui->cmbTrExCategory);
+    visual.RenderChart(ui->frmChart, adapter.FetchTotalByType("INCOME"), adapter.FetchTotalByType("EXPENSE"));
 
-    ui->lblIncome->setText(adapter.FetchTotalByType("INCOME"));
-    ui->lblExpense->setText(adapter.FetchTotalByType("EXPENSE"));
     ui->lblTotal->setText(adapter.FetchTotalBalance());
 }
 
 void Dashboard::on_btnTrExAdd_clicked()
 {
     Util util;
+    DataVisualizer visual;
     TransactionController transactionController;
     int accountId = transactionController.ParseAccountId(ui->cmbTrExAccount->currentText());
     int categoryId = transactionController.ParseCategoryId(ui->cmbTrExCategory->currentText());
@@ -127,8 +129,11 @@ void Dashboard::on_btnTrExAdd_clicked()
     adapter.LoadAccountData(ui->tblAccounts, ui->cmbDeleteAccount);
     adapter.LoadTransactionData
             (ui->tblTransactions, ui->cmbTrInAccount, ui->cmbTrInCategory, ui->cmbTrExAccount, ui->cmbTrExCategory);
+    visual.RenderChart(ui->frmChart, adapter.FetchTotalByType("INCOME"), adapter.FetchTotalByType("EXPENSE"));
 
-    ui->lblIncome->setText(adapter.FetchTotalByType("INCOME"));
-    ui->lblExpense->setText(adapter.FetchTotalByType("EXPENSE"));
     ui->lblTotal->setText(adapter.FetchTotalBalance());
+
+    //    ui->lblIncome->setText(adapter.FetchTotalByType("INCOME"));
+    //    ui->lblExpense->setText(adapter.FetchTotalByType("EXPENSE"));
+    //    ui->lblTotal->setText(adapter.FetchTotalBalance());
 }

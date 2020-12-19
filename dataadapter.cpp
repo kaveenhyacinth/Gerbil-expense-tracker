@@ -239,17 +239,17 @@ bool DataAdapter::UpdateAccountExpense(int accountId, int expenseBalance)
     return true;
 }
 
-QString DataAdapter::FetchTotalByType(QString recordType)
+int DataAdapter::FetchTotalByType(QString recordType)
 {
     Util util;
     DbGateway db;
     QSqlQuery qry;
-    QString totalBalance;
-    int tempBalance = 0;
+//    QString totalBalance;
+    int balance = 0;
 
     if(!db.Connect()) {
         qDebug() << "Failed to open the database connection @ FetchTotalIncome";
-        return "";
+        return -1;
     }
 
     qry.prepare("SELECT amount FROM record WHERE record_type = ?");
@@ -258,17 +258,17 @@ QString DataAdapter::FetchTotalByType(QString recordType)
     if(!qry.exec())
     {
         qDebug() << "Something went wrong while fetching total " << recordType << " details";
-        return "";
+        return -1;
     }
 
     while (qry.next())
     {
-         tempBalance += util.FormatMoney(qry.value(0).toString());
+         balance += util.FormatMoney(qry.value(0).toString());
     }
 
-    totalBalance = util.FormatBalance(tempBalance);
+//    totalBalance = util.FormatBalance(balance);
     db.Disconnect();
-    return totalBalance;
+    return balance;
 }
 
 QString DataAdapter::FetchTotalBalance()
