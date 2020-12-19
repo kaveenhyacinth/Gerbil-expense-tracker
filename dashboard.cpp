@@ -2,6 +2,7 @@
 #include "ui_dashboard.h"
 
 #include <QMessageBox>
+#include <QPixmap>
 
 Dashboard::Dashboard(QWidget *parent)
     : QMainWindow(parent)
@@ -9,10 +10,16 @@ Dashboard::Dashboard(QWidget *parent)
 {
     DataAdapter adapter;
     DataVisualizer visual;
+    QPixmap pix(":/img/resources/gerbil_logo.png");
 
     ui->setupUi(this);
     ui->dtTrInDate->setDate(QDate::currentDate());
     ui->dtTrExDate->setDate(QDate::currentDate());
+
+    int width = ui->lblAboutImage->width();
+    int height = ui->lblAboutImage->height();
+
+    ui->lblAboutImage->setPixmap(pix.scaled(width, height, Qt::KeepAspectRatio));
 
     adapter.LoadAccountData(ui->tblAccounts, ui->cmbDeleteAccount);
     adapter.LoadTransactionData
