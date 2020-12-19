@@ -30,7 +30,7 @@ void DataVisualizer::RenderChart(QWidget *frame, int incomeBalance, int expenseB
 
     QChart *chart = new QChart();
     chart->addSeries(series);
-    chart->setTitle("Cash Flow");
+    chart->setTitle("Cash Flow of Last 30 Days");
 
     QChartView *chartView = new QChartView(chart);
     chartView->setParent(frame);

@@ -1,9 +1,9 @@
 #include "dbgateway.h"
 
-
 DbGateway::DbGateway()
 {
-    path = "gerbil.db";
+    path = QDir::homePath() + "/gerbil.db";
+    qDebug() << "Database located at" << path;
     db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName(path);
 }

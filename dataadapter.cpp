@@ -3,6 +3,7 @@
 #include "util.h"
 
 #include <QMessageBox>
+#include <QDate>
 
 DataAdapter::DataAdapter()
 {
@@ -57,7 +58,8 @@ void DataAdapter::ReadTransactions(QTableView *tbl)
                  "c.type as 'Category' "
                  "FROM ((record as t "
                  "INNER JOIN account as a ON t.account_id = a._id) "
-                 "INNER JOIN category as c ON t.category = c._id)");
+                 "INNER JOIN category as c ON t.category = c._id) "
+                 "ORDER BY t.date desc");
 
     if(!qry->exec())
     {
@@ -247,13 +249,17 @@ int DataAdapter::FetchTotalByType(QString recordType)
 //    QString totalBalance;
     int balance = 0;
 
+    QDate date = QDate::currentDate().addDays(-30);
+    qDebug() << "Date debugger at fetchTotalByType" << date;
+
     if(!db.Connect()) {
         qDebug() << "Failed to open the database connection @ FetchTotalIncome";
         return -1;
     }
 
-    qry.prepare("SELECT amount FROM record WHERE record_type = ?");
+    qry.prepare("SELECT amount FROM record WHERE record_type = ? AND date >= ?");
     qry.bindValue(0, recordType);
+    qry.bindValue(1, date);
 
     if(!qry.exec())
     {

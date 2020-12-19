@@ -67,8 +67,13 @@
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
+      <property name="font">
+       <font>
+        <family>Montserrat</family>
+       </font>
+      </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tbOverview">
        <attribute name="title">
@@ -303,7 +308,7 @@
                  <number>20</number>
                 </property>
                 <property name="leftMargin">
-                 <number>89</number>
+                 <number>104</number>
                 </property>
                 <property name="topMargin">
                  <number>0</number>
@@ -430,7 +435,7 @@
                  <number>20</number>
                 </property>
                 <property name="leftMargin">
-                 <number>89</number>
+                 <number>104</number>
                 </property>
                 <property name="topMargin">
                  <number>0</number>
@@ -572,7 +577,7 @@
                  <number>20</number>
                 </property>
                 <property name="leftMargin">
-                 <number>89</number>
+                 <number>104</number>
                 </property>
                 <property name="topMargin">
                  <number>0</number>
@@ -680,16 +685,22 @@
           <property name="spacing">
            <number>5</number>
           </property>
+          <property name="leftMargin">
+           <number>50</number>
+          </property>
+          <property name="rightMargin">
+           <number>50</number>
+          </property>
           <item>
            <widget class="QLabel" name="lblAboutImage">
             <property name="minimumSize">
              <size>
               <width>0</width>
-              <height>200</height>
+              <height>250</height>
              </size>
             </property>
             <property name="text">
-             <string>TextLabel</string>
+             <string>Image</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -713,11 +724,27 @@
            </widget>
           </item>
           <item>
+           <widget class="QLabel" name="label_15">
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>1.0.0v</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QLabel" name="label_13">
             <property name="font">
              <font>
               <family>Montserrat</family>
-              <pointsize>12</pointsize>
+              <pointsize>10</pointsize>
              </font>
             </property>
             <property name="text">
@@ -736,11 +763,11 @@
             <property name="font">
              <font>
               <family>Montserrat</family>
-              <pointsize>10</pointsize>
+              <pointsize>8</pointsize>
              </font>
             </property>
             <property name="text">
-             <string>Powered by Kaveen Hyacinth De Alwis</string>
+             <string>Powered by Kaveen Hyacinth Digital © 2020</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>

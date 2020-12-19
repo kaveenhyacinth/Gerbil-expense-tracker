@@ -8,6 +8,7 @@
 #include <QSqlQueryModel>
 #include <QSqlError>
 #include <QDebug>
+#include <QDir>
 
 class DbGateway
 {
