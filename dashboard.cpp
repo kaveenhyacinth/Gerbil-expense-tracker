@@ -19,15 +19,20 @@ Dashboard::Dashboard(QWidget *parent)
 
     ui->dtTrInDate->setDate(QDate::currentDate());
     ui->dtTrExDate->setDate(QDate::currentDate());
+    ui->dtStartDate->setDate(QDate::currentDate().addDays(-30));
+    ui->dtEndDate->setDate(QDate::currentDate());
     ui->lblAboutImage->setPixmap(pix.scaled(width, height, Qt::KeepAspectRatio));
     ui->lblTotal->setText(adapter.FetchTotalBalance());
     ui->lblIncome->setText(adapter.FetchTotalStringByType("INCOME"));
     ui->lblExpense->setText(adapter.FetchTotalStringByType("EXPENSE"));
+    ui->lblIncomeFilter->setText("00.0");
+    ui->lblExpenseFilter->setText("0.00");
 
     adapter.LoadAccountData(ui->tblAccounts, ui->cmbDeleteAccount);
     adapter.LoadTransactionData
             (ui->tblTransactions, ui->cmbTrInAccount, ui->cmbTrInCategory, ui->cmbTrExAccount, ui->cmbTrExCategory);
     visual.RenderChart(ui->frmChart, adapter.FetchTotalByType("INCOME"), adapter.FetchTotalByType("EXPENSE"));
+    visual.RenderChart(ui->frmChartFilter, 0, 0);
 }
 
 Dashboard::~Dashboard()
@@ -152,6 +157,22 @@ void Dashboard::on_btnTrExAdd_clicked()
     ui->lblTotal->setText(adapter.FetchTotalBalance());
     ui->lblIncome->setText(adapter.FetchTotalStringByType("INCOME"));
     ui->lblExpense->setText(adapter.FetchTotalStringByType("EXPENSE"));
+}
+
+void Dashboard::on_btnFilter_clicked()
+{
+    DataAdapter adapter;
+    DataVisualizer visual;
+
+    int income = adapter.FetchTotalOfTypeByDate("INCOME", ui->dtStartDate->date(), ui->dtEndDate->date());
+    int expenses = adapter.FetchTotalOfTypeByDate("EXPENSE", ui->dtStartDate->date(), ui->dtEndDate->date());
+    QString incomeString = adapter.FetchTotalStringOfTypeByDate("INCOME", ui->dtStartDate->date(), ui->dtEndDate->date());
+    QString expenseString = adapter.FetchTotalStringOfTypeByDate("EXPENSE", ui->dtStartDate->date(), ui->dtEndDate->date());
+
+    visual.RenderChart(ui->frmChartFilter, income, expenses);
+
+    ui->lblIncomeFilter->setText(incomeString);
+    ui->lblExpenseFilter->setText(expenseString);
 }
 
 void Dashboard::on_btnTrInClear_clicked()

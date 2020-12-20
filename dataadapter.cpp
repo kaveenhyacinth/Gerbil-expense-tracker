@@ -247,7 +247,6 @@ int DataAdapter::FetchTotalByType(QString recordType)
     Util util;
     DbGateway db;
     QSqlQuery qry;
-//    QString totalBalance;
     int balance = 0;
 
 //    QDate date = QDate::currentDate().addDays(-30);
@@ -272,7 +271,6 @@ int DataAdapter::FetchTotalByType(QString recordType)
          balance += util.FormatMoney(qry.value(0).toString());
     }
 
-//    totalBalance = util.FormatBalance(balance);
     db.Disconnect();
     return balance;
 }
@@ -282,19 +280,19 @@ int DataAdapter::FetchTotalOfTypeByDate(QString recordType, QDate startDate, QDa
     Util util;
     DbGateway db;
     QSqlQuery qry;
-//    QString totalBalance;
     int balance = 0;
-
-//    QDate date = QDate::currentDate().addDays(-30);
-//    qDebug() << "Date debugger at fetchTotalByType" << date;
 
     if(!db.Connect()) {
         qDebug() << "Failed to open the database connection @ FetchTotalIncome";
         return -1;
     }
 
-    qry.prepare("SELECT amount FROM record WHERE record_type = ?");
+    if(startDate > endDate) return -1;
+
+    qry.prepare("SELECT amount FROM record WHERE record_type = ? AND date >= ? AND date <= ?");
     qry.bindValue(0, recordType);
+    qry.bindValue(1, startDate);
+    qry.bindValue(2, endDate);
 
     if(!qry.exec())
     {
@@ -307,7 +305,6 @@ int DataAdapter::FetchTotalOfTypeByDate(QString recordType, QDate startDate, QDa
          balance += util.FormatMoney(qry.value(0).toString());
     }
 
-//    totalBalance = util.FormatBalance(balance);
     db.Disconnect();
     return balance;
 }
@@ -330,6 +327,45 @@ QString DataAdapter::FetchTotalStringByType(QString recordType)
 
     qry.prepare("SELECT amount FROM record WHERE record_type = ?");
     qry.bindValue(0, recordType);
+
+    if(!qry.exec())
+    {
+        qDebug() << "Something went wrong while fetching total " << recordType << " details";
+        return "";
+    }
+
+    while (qry.next())
+    {
+         balance += util.FormatMoney(qry.value(0).toString());
+    }
+
+    totalBalance = util.FormatBalance(balance);
+    db.Disconnect();
+    return totalBalance;
+}
+
+QString DataAdapter::FetchTotalStringOfTypeByDate(QString recordType, QDate startDate, QDate endDate)
+{
+    Util util;
+    DbGateway db;
+    QSqlQuery qry;
+    QString totalBalance;
+    int balance = 0;
+
+    QDate date = QDate::currentDate().addDays(-30);
+    qDebug() << "Date debugger at fetchTotalByType" << date;
+
+    if(!db.Connect()) {
+        qDebug() << "Failed to open the database connection @ FetchTotalIncome";
+        return "";
+    }
+
+    if(startDate > endDate) return "";
+
+    qry.prepare("SELECT amount FROM record WHERE record_type = ? AND date >= ? AND date <= ?");
+    qry.bindValue(0, recordType);
+    qry.bindValue(1, startDate);
+    qry.bindValue(2, endDate);
 
     if(!qry.exec())
     {

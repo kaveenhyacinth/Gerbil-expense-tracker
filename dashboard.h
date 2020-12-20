@@ -37,6 +37,8 @@ private slots:
 
     void on_btnAccountClear_clicked();
 
+    void on_btnFilter_clicked();
+
 private:
     Ui::Dashboard *ui;
 };
