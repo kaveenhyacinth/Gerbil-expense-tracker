@@ -18,9 +18,11 @@ public:
     void LoadTransactionData(QTableView*, QComboBox*, QComboBox*, QComboBox*, QComboBox*);
     bool UpdateAccountIncome(int, int);
     bool UpdateAccountExpense(int, int);
-    int FetchTotalByType(QString recordType);
+    int FetchTotalByType(QString);
+    int FetchTotalOfTypeByDate(QString, QDate, QDate);
     QString FetchTotalBalance();
-    QString FetchTotalStringByType(QString recordType);
+    QString FetchTotalStringByType(QString);
+    QString FetchTotalStringOfTypeByDate(QString, QDate, QDate);
 };
 
 #endif // DATAADAPTER_H
