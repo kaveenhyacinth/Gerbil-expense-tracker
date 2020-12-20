@@ -16,6 +16,10 @@ Dashboard::Dashboard(QWidget *parent)
 
     int width = ui->lblAboutImage->width();
     int height = ui->lblAboutImage->height();
+    int income = adapter.FetchTotalOfTypeByDate("INCOME", QDate::currentDate().addDays(-30), QDate::currentDate());
+    int expenses = adapter.FetchTotalOfTypeByDate("EXPENSE", QDate::currentDate().addDays(-30), QDate::currentDate());
+    QString incomeString = adapter.FetchTotalStringOfTypeByDate("INCOME", QDate::currentDate().addDays(-30), QDate::currentDate());
+    QString expenseString = adapter.FetchTotalStringOfTypeByDate("EXPENSE", QDate::currentDate().addDays(-30), QDate::currentDate());
 
     ui->dtTrInDate->setDate(QDate::currentDate());
     ui->dtTrExDate->setDate(QDate::currentDate());
@@ -25,14 +29,14 @@ Dashboard::Dashboard(QWidget *parent)
     ui->lblTotal->setText(adapter.FetchTotalBalance());
     ui->lblIncome->setText(adapter.FetchTotalStringByType("INCOME"));
     ui->lblExpense->setText(adapter.FetchTotalStringByType("EXPENSE"));
-    ui->lblIncomeFilter->setText("00.0");
-    ui->lblExpenseFilter->setText("0.00");
+    ui->lblIncomeFilter->setText(incomeString);
+    ui->lblExpenseFilter->setText(expenseString);
 
     adapter.LoadAccountData(ui->tblAccounts, ui->cmbDeleteAccount);
     adapter.LoadTransactionData
             (ui->tblTransactions, ui->cmbTrInAccount, ui->cmbTrInCategory, ui->cmbTrExAccount, ui->cmbTrExCategory);
     visual.RenderChart(ui->frmChart, adapter.FetchTotalByType("INCOME"), adapter.FetchTotalByType("EXPENSE"));
-    visual.RenderChart(ui->frmChartFilter, 0, 0);
+    visual.RenderChart(ui->frmChartFilter, income, expenses);
 }
 
 Dashboard::~Dashboard()
@@ -169,10 +173,30 @@ void Dashboard::on_btnFilter_clicked()
     QString incomeString = adapter.FetchTotalStringOfTypeByDate("INCOME", ui->dtStartDate->date(), ui->dtEndDate->date());
     QString expenseString = adapter.FetchTotalStringOfTypeByDate("EXPENSE", ui->dtStartDate->date(), ui->dtEndDate->date());
 
+    ui->lblIncomeFilter->setText(incomeString);
+    ui->lblExpenseFilter->setText(expenseString);
+
+    ui->frmChartFilter->hide();
     visual.RenderChart(ui->frmChartFilter, income, expenses);
+    ui->frmChartFilter->show();
+}
+
+void Dashboard::on_btnReset_clicked()
+{
+    DataAdapter adapter;
+    DataVisualizer visual;
+
+    int income = adapter.FetchTotalOfTypeByDate("INCOME", ui->dtStartDate->date(), ui->dtEndDate->date());
+    int expenses = adapter.FetchTotalOfTypeByDate("EXPENSE", ui->dtStartDate->date(), ui->dtEndDate->date());
+    QString incomeString = adapter.FetchTotalStringOfTypeByDate("INCOME", ui->dtStartDate->date(), ui->dtEndDate->date());
+    QString expenseString = adapter.FetchTotalStringOfTypeByDate("EXPENSE", ui->dtStartDate->date(), ui->dtEndDate->date());
 
     ui->lblIncomeFilter->setText(incomeString);
     ui->lblExpenseFilter->setText(expenseString);
+
+    ui->frmChartFilter->hide();
+    visual.RenderChart(ui->frmChartFilter, income, expenses);
+    ui->frmChartFilter->show();
 }
 
 void Dashboard::on_btnTrInClear_clicked()

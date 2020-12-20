@@ -26,7 +26,9 @@ public:
 
 private slots:
     void on_btnTrInAdd_clicked();
+
     void on_btnAccountAdd_clicked();
+
     void on_btnAccountDelete_clicked();
 
     void on_btnTrExAdd_clicked();
@@ -38,6 +40,8 @@ private slots:
     void on_btnAccountClear_clicked();
 
     void on_btnFilter_clicked();
+
+    void on_btnReset_clicked();
 
 private:
     Ui::Dashboard *ui;
