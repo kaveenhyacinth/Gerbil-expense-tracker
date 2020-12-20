@@ -31,6 +31,12 @@ private slots:
 
     void on_btnTrExAdd_clicked();
 
+    void on_btnTrInClear_clicked();
+
+    void on_btnTrExClear_clicked();
+
+    void on_btnAccountClear_clicked();
+
 private:
     Ui::Dashboard *ui;
 };

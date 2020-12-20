@@ -12,7 +12,7 @@ public:
 public:
     void ReadAccounts(QComboBox *);
     void ReadAccounts(QTableView *);
-    void ReadCategories(QComboBox*);
+    void ReadCategories(QComboBox*, QString);
     void ReadTransactions(QTableView*);
     void LoadAccountData(QTableView *, QComboBox *);
     void LoadTransactionData(QTableView*, QComboBox*, QComboBox*, QComboBox*, QComboBox*);

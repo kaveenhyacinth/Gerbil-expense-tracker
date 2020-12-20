@@ -153,3 +153,22 @@ void Dashboard::on_btnTrExAdd_clicked()
     ui->lblIncome->setText(adapter.FetchTotalStringByType("INCOME"));
     ui->lblExpense->setText(adapter.FetchTotalStringByType("EXPENSE"));
 }
+
+void Dashboard::on_btnTrInClear_clicked()
+{
+    ui->txtTrInAmount->clear();
+    ui->txtTrInCents->setText("00");
+}
+
+void Dashboard::on_btnTrExClear_clicked()
+{
+    ui->txtTrExAmount->clear();
+    ui->txtTrExCents->setText("00");
+}
+
+void Dashboard::on_btnAccountClear_clicked()
+{
+    ui->txtAccountName->clear();
+    ui->txtBalance->clear();
+    ui->txtBalanceCents->setText("00");
+}

@@ -99,7 +99,7 @@ void DataAdapter::ReadAccounts(QComboBox *cmb)
     db.Disconnect();
 }
 
-void DataAdapter::ReadCategories(QComboBox *cmb)
+void DataAdapter::ReadCategories(QComboBox *cmb, QString ref)
 {
     DbGateway db;
     QSqlQuery *qry;
@@ -113,7 +113,8 @@ void DataAdapter::ReadCategories(QComboBox *cmb)
     model = new QSqlQueryModel();
     qry = new QSqlQuery(db.getDb());
 
-    qry->prepare("SELECT type FROM category ORDER BY _id");
+    qry->prepare("SELECT type FROM category WHERE ref = ? ORDER BY _id");
+    qry->bindValue(0, ref);
 
     if(!qry->exec())
     {
@@ -249,8 +250,8 @@ int DataAdapter::FetchTotalByType(QString recordType)
 //    QString totalBalance;
     int balance = 0;
 
-    QDate date = QDate::currentDate().addDays(-30);
-    qDebug() << "Date debugger at fetchTotalByType" << date;
+//    QDate date = QDate::currentDate().addDays(-30);
+//    qDebug() << "Date debugger at fetchTotalByType" << date;
 
     if(!db.Connect()) {
         qDebug() << "Failed to open the database connection @ FetchTotalIncome";
@@ -354,6 +355,6 @@ void DataAdapter::LoadTransactionData
     this->ReadTransactions(tbl);
     this->ReadAccounts(cmbInAcc);
     this->ReadAccounts(cmbExAcc);
-    this->ReadCategories(cmbInCat);
-    this->ReadCategories(cmbExCat);
+    this->ReadCategories(cmbInCat, "I");
+    this->ReadCategories(cmbExCat, "E");
 }
