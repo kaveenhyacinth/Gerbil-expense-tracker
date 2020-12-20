@@ -8,25 +8,26 @@ Dashboard::Dashboard(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Dashboard)
 {
+    ui->setupUi(this);
+
     DataAdapter adapter;
     DataVisualizer visual;
     QPixmap pix(":/img/resources/gerbil_logo.png");
 
-    ui->setupUi(this);
-    ui->dtTrInDate->setDate(QDate::currentDate());
-    ui->dtTrExDate->setDate(QDate::currentDate());
-
     int width = ui->lblAboutImage->width();
     int height = ui->lblAboutImage->height();
 
+    ui->dtTrInDate->setDate(QDate::currentDate());
+    ui->dtTrExDate->setDate(QDate::currentDate());
     ui->lblAboutImage->setPixmap(pix.scaled(width, height, Qt::KeepAspectRatio));
+    ui->lblTotal->setText(adapter.FetchTotalBalance());
+    ui->lblIncome->setText(adapter.FetchTotalStringByType("INCOME"));
+    ui->lblExpense->setText(adapter.FetchTotalStringByType("EXPENSE"));
 
     adapter.LoadAccountData(ui->tblAccounts, ui->cmbDeleteAccount);
     adapter.LoadTransactionData
             (ui->tblTransactions, ui->cmbTrInAccount, ui->cmbTrInCategory, ui->cmbTrExAccount, ui->cmbTrExCategory);
     visual.RenderChart(ui->frmChart, adapter.FetchTotalByType("INCOME"), adapter.FetchTotalByType("EXPENSE"));
-
-    ui->lblTotal->setText(adapter.FetchTotalBalance());
 }
 
 Dashboard::~Dashboard()
@@ -48,11 +49,12 @@ void Dashboard::on_btnAccountAdd_clicked()
 
     Util util;
     DataVisualizer visual;
+    DataAdapter adapter;
+    AccountController accountController;
+
     QString accountName = ui->txtAccountName->text();
     QString balance = util.FormatBalance(ui->txtBalance->text(), ui->txtBalanceCents->text());
     Account account(accountName, balance);
-    AccountController accountController;
-    DataAdapter adapter;
 
     accountController.CreateAccount(account);
 
@@ -62,6 +64,8 @@ void Dashboard::on_btnAccountAdd_clicked()
     visual.RenderChart(ui->frmChart, adapter.FetchTotalByType("INCOME"), adapter.FetchTotalByType("EXPENSE"));
 
     ui->lblTotal->setText(adapter.FetchTotalBalance());
+    ui->lblIncome->setText(adapter.FetchTotalStringByType("INCOME"));
+    ui->lblExpense->setText(adapter.FetchTotalStringByType("EXPENSE"));
 }
 
 void Dashboard::on_btnAccountDelete_clicked()
@@ -76,11 +80,12 @@ void Dashboard::on_btnAccountDelete_clicked()
 
     if(ret != QMessageBox::Yes) return;
 
-    DataVisualizer visual;
-    QString accountName = ui->cmbDeleteAccount->currentText();
-    TransactionController transactionController;
-    AccountController accountController;
     DataAdapter adapter;
+    DataVisualizer visual;
+    AccountController accountController;
+    TransactionController transactionController;
+
+    QString accountName = ui->cmbDeleteAccount->currentText();
 
     transactionController.DeleteTransactionByAccount(transactionController.ParseAccountId(accountName));
     accountController.DeleteAccount(accountName);
@@ -91,20 +96,23 @@ void Dashboard::on_btnAccountDelete_clicked()
     visual.RenderChart(ui->frmChart, adapter.FetchTotalByType("INCOME"), adapter.FetchTotalByType("EXPENSE"));
 
     ui->lblTotal->setText(adapter.FetchTotalBalance());
+    ui->lblIncome->setText(adapter.FetchTotalStringByType("INCOME"));
+    ui->lblExpense->setText(adapter.FetchTotalStringByType("EXPENSE"));
 }
 
 void Dashboard::on_btnTrInAdd_clicked()
 {
     Util util;
+    DataAdapter adapter;
     DataVisualizer visual;
     TransactionController transactionController;
+
     int accountId = transactionController.ParseAccountId(ui->cmbTrInAccount->currentText());
     int categoryId = transactionController.ParseCategoryId(ui->cmbTrInCategory->currentText());
     QString amount = util.FormatBalance(ui->txtTrInAmount->text(), ui->txtTrInCents->text());
     QString type = "INCOME";
     QDate date = ui->dtTrInDate->date();
     Transaction transaction(accountId, categoryId, type, amount, date);
-    DataAdapter adapter;
 
     if(adapter.UpdateAccountIncome(accountId, util.FormatMoney(amount)))
         transactionController.CreateTransaction(transaction);
@@ -115,20 +123,23 @@ void Dashboard::on_btnTrInAdd_clicked()
     visual.RenderChart(ui->frmChart, adapter.FetchTotalByType("INCOME"), adapter.FetchTotalByType("EXPENSE"));
 
     ui->lblTotal->setText(adapter.FetchTotalBalance());
+    ui->lblIncome->setText(adapter.FetchTotalStringByType("INCOME"));
+    ui->lblExpense->setText(adapter.FetchTotalStringByType("EXPENSE"));
 }
 
 void Dashboard::on_btnTrExAdd_clicked()
 {
     Util util;
+    DataAdapter adapter;
     DataVisualizer visual;
     TransactionController transactionController;
+
     int accountId = transactionController.ParseAccountId(ui->cmbTrExAccount->currentText());
     int categoryId = transactionController.ParseCategoryId(ui->cmbTrExCategory->currentText());
     QString amount = util.FormatBalance(ui->txtTrExAmount->text(), ui->txtTrExCents->text());
     QString type = "EXPENSE";
     QDate date = ui->dtTrExDate->date();
     Transaction transaction(accountId, categoryId, type, amount, date);
-    DataAdapter adapter;
 
     if(adapter.UpdateAccountExpense(accountId, util.FormatMoney(amount)))
         transactionController.CreateTransaction(transaction);
@@ -139,8 +150,6 @@ void Dashboard::on_btnTrExAdd_clicked()
     visual.RenderChart(ui->frmChart, adapter.FetchTotalByType("INCOME"), adapter.FetchTotalByType("EXPENSE"));
 
     ui->lblTotal->setText(adapter.FetchTotalBalance());
-
-    //    ui->lblIncome->setText(adapter.FetchTotalByType("INCOME"));
-    //    ui->lblExpense->setText(adapter.FetchTotalByType("EXPENSE"));
-    //    ui->lblTotal->setText(adapter.FetchTotalBalance());
+    ui->lblIncome->setText(adapter.FetchTotalStringByType("INCOME"));
+    ui->lblExpense->setText(adapter.FetchTotalStringByType("EXPENSE"));
 }

@@ -89,6 +89,85 @@
            <enum>QFrame::Raised</enum>
           </property>
           <layout class="QHBoxLayout" name="horizontalLayout_10">
+           <property name="spacing">
+            <number>5</number>
+           </property>
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>10</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>10</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="label_16">
+             <property name="font">
+              <font>
+               <family>Montserrat</family>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Income</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+             <property name="margin">
+              <number>8</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="lblIncome">
+             <property name="font">
+              <font>
+               <family>Montserrat</family>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Balance</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_18">
+             <property name="font">
+              <font>
+               <family>Montserrat</family>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Expenses</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+             <property name="margin">
+              <number>8</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="lblExpense">
+             <property name="font">
+              <font>
+               <family>Montserrat</family>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Balance</string>
+             </property>
+            </widget>
+           </item>
            <item>
             <widget class="QLabel" name="label">
              <property name="font">
@@ -98,7 +177,7 @@
               </font>
              </property>
              <property name="text">
-              <string>Total Balance</string>
+              <string>Balance</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -135,7 +214,7 @@
               </font>
              </property>
              <property name="text">
-              <string>Total</string>
+              <string>Balance</string>
              </property>
             </widget>
            </item>
@@ -696,7 +775,7 @@
             <property name="minimumSize">
              <size>
               <width>0</width>
-              <height>250</height>
+              <height>300</height>
              </size>
             </property>
             <property name="text">
@@ -748,7 +827,7 @@
              </font>
             </property>
             <property name="text">
-             <string>A money management tool which allows you to track your expenses and income of all the accounts in one place</string>
+             <string>One stop money management tool that allows you to manage your money </string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
