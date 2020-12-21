@@ -33,7 +33,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normalon>../../../../../../Pictures/Public/Mess/gerbil_logo.png</normalon>
+    <normalon>:/img/resources/gerbil_logo.png</normalon>
    </iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -73,7 +73,7 @@
        </font>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>4</number>
       </property>
       <widget class="QWidget" name="tbOverview">
        <attribute name="title">
