@@ -1,7 +1,6 @@
 /*!
  * \author Kaveen Hyacinth
  * \copyright Kaveen Hyacinth Digital © 2020
- * \package model
 */
 
 #ifndef ACCOUNT_H

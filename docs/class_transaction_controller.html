@@ -27,8 +27,9 @@
   <td id="projectlogo"><img alt="Logo" src="gerbil_logo_small.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Gerbil Money Manager
-   &#160;<span id="projectnumber">1.00V</span>
+   &#160;<span id="projectnumber">1.0.0v</span>
    </div>
+   <div id="projectbrief">One stop money management tool that allows you to manage your money</div>
   </td>
  </tr>
  </tbody>
@@ -90,25 +91,193 @@ $(document).ready(function(){initNavTree('class_transaction_controller.html','')
 <div class="title">TransactionController Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>The <a class="el" href="class_transaction_controller.html" title="The TransactionController class handles the basic transaction operations such as create,...">TransactionController</a> class handles the basic transaction operations such as create, delete and parse.  
+ <a href="class_transaction_controller.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="transactioncontroller_8h_source.html">transactioncontroller.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4c6922040f176f415aea24746b349150"><td class="memItemLeft" align="right" valign="top"><a id="a4c6922040f176f415aea24746b349150"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>CreateTransaction</b> (<a class="el" href="class_transaction.html">Transaction</a>)</td></tr>
-<tr class="separator:a4c6922040f176f415aea24746b349150"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b64e4d512d8e0b8da585ea20f297683"><td class="memItemLeft" align="right" valign="top"><a id="a0b64e4d512d8e0b8da585ea20f297683"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>ParseCategoryId</b> (QString)</td></tr>
-<tr class="separator:a0b64e4d512d8e0b8da585ea20f297683"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3da52f28228be3fe5095c6b7bbdc1bed"><td class="memItemLeft" align="right" valign="top"><a id="a3da52f28228be3fe5095c6b7bbdc1bed"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>ParseAccountId</b> (QString)</td></tr>
-<tr class="separator:a3da52f28228be3fe5095c6b7bbdc1bed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71be996714f01e6ada85efaf1a8181c0"><td class="memItemLeft" align="right" valign="top"><a id="a71be996714f01e6ada85efaf1a8181c0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>DeleteTransactionByAccount</b> (int accountId)</td></tr>
+<tr class="memitem:a2ff3028c0d5ab9aedf3ed63a68431a8c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transaction_controller.html#a2ff3028c0d5ab9aedf3ed63a68431a8c">TransactionController</a> ()</td></tr>
+<tr class="separator:a2ff3028c0d5ab9aedf3ed63a68431a8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f40e5157d115d10d36d1c0525b77f2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transaction_controller.html#a2f40e5157d115d10d36d1c0525b77f2d">CreateTransaction</a> (<a class="el" href="class_transaction.html">Transaction</a> transaction)</td></tr>
+<tr class="memdesc:a2f40e5157d115d10d36d1c0525b77f2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">CreateTransaction creates a transaction based on <a class="el" href="class_transaction.html" title="The Transaction class holds the basic transaction data.">Transaction</a> model.  <a href="class_transaction_controller.html#a2f40e5157d115d10d36d1c0525b77f2d">More...</a><br /></td></tr>
+<tr class="separator:a2f40e5157d115d10d36d1c0525b77f2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71be996714f01e6ada85efaf1a8181c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transaction_controller.html#a71be996714f01e6ada85efaf1a8181c0">DeleteTransactionByAccount</a> (int accountId)</td></tr>
+<tr class="memdesc:a71be996714f01e6ada85efaf1a8181c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">DeleteTransactionByAccount deletes a transaction based on its account id field.  <a href="class_transaction_controller.html#a71be996714f01e6ada85efaf1a8181c0">More...</a><br /></td></tr>
 <tr class="separator:a71be996714f01e6ada85efaf1a8181c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a793b6222ae260176079137b9f2f79bac"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transaction_controller.html#a793b6222ae260176079137b9f2f79bac">ParseAccountId</a> (QString account)</td></tr>
+<tr class="memdesc:a793b6222ae260176079137b9f2f79bac"><td class="mdescLeft">&#160;</td><td class="mdescRight">ParseAccountId returns the account id when the account name is given.  <a href="class_transaction_controller.html#a793b6222ae260176079137b9f2f79bac">More...</a><br /></td></tr>
+<tr class="separator:a793b6222ae260176079137b9f2f79bac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaadbe314c314300d5f546ddcf7437c24"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_transaction_controller.html#aaadbe314c314300d5f546ddcf7437c24">ParseCategoryId</a> (QString category)</td></tr>
+<tr class="memdesc:aaadbe314c314300d5f546ddcf7437c24"><td class="mdescLeft">&#160;</td><td class="mdescRight">ParseCategoryId returns the category id when the category name is given.  <a href="class_transaction_controller.html#aaadbe314c314300d5f546ddcf7437c24">More...</a><br /></td></tr>
+<tr class="separator:aaadbe314c314300d5f546ddcf7437c24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The <a class="el" href="class_transaction_controller.html" title="The TransactionController class handles the basic transaction operations such as create,...">TransactionController</a> class handles the basic transaction operations such as create, delete and parse. </p>
+<dl class="section author"><dt>Author</dt><dd>Kaveen Hyacinth </dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Kaveen Hyacinth Digital © 2020 </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="transactioncontroller_8h_source.html#l00016">16</a> of file <a class="el" href="transactioncontroller_8h_source.html">transactioncontroller.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a2ff3028c0d5ab9aedf3ed63a68431a8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ff3028c0d5ab9aedf3ed63a68431a8c">&#9670;&nbsp;</a></span>TransactionController()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TransactionController::TransactionController </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="transactioncontroller_8cpp_source.html#l00004">4</a> of file <a class="el" href="transactioncontroller_8cpp_source.html">transactioncontroller.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a2f40e5157d115d10d36d1c0525b77f2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f40e5157d115d10d36d1c0525b77f2d">&#9670;&nbsp;</a></span>CreateTransaction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TransactionController::CreateTransaction </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_transaction.html">Transaction</a>&#160;</td>
+          <td class="paramname"><em>transaction</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CreateTransaction creates a transaction based on <a class="el" href="class_transaction.html" title="The Transaction class holds the basic transaction data.">Transaction</a> model. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">transaction</td><td>is the <a class="el" href="class_transaction.html" title="The Transaction class holds the basic transaction data.">Transaction</a> model </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="transactioncontroller_8cpp_source.html#l00068">68</a> of file <a class="el" href="transactioncontroller_8cpp_source.html">transactioncontroller.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_transaction_controller_a2f40e5157d115d10d36d1c0525b77f2d_cgraph.png" border="0" usemap="#aclass_transaction_controller_a2f40e5157d115d10d36d1c0525b77f2d_cgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a71be996714f01e6ada85efaf1a8181c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71be996714f01e6ada85efaf1a8181c0">&#9670;&nbsp;</a></span>DeleteTransactionByAccount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TransactionController::DeleteTransactionByAccount </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>accountId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>DeleteTransactionByAccount deletes a transaction based on its account id field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">accountId</td><td>is the point of deletion </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="transactioncontroller_8cpp_source.html#l00102">102</a> of file <a class="el" href="transactioncontroller_8cpp_source.html">transactioncontroller.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_transaction_controller_a71be996714f01e6ada85efaf1a8181c0_cgraph.png" border="0" usemap="#aclass_transaction_controller_a71be996714f01e6ada85efaf1a8181c0_cgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a793b6222ae260176079137b9f2f79bac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a793b6222ae260176079137b9f2f79bac">&#9670;&nbsp;</a></span>ParseAccountId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TransactionController::ParseAccountId </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>account</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ParseAccountId returns the account id when the account name is given. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">account</td><td>is the name of the account </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>account id </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="transactioncontroller_8cpp_source.html#l00009">9</a> of file <a class="el" href="transactioncontroller_8cpp_source.html">transactioncontroller.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_transaction_controller_a793b6222ae260176079137b9f2f79bac_cgraph.png" border="0" usemap="#aclass_transaction_controller_a793b6222ae260176079137b9f2f79bac_cgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="aaadbe314c314300d5f546ddcf7437c24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaadbe314c314300d5f546ddcf7437c24">&#9670;&nbsp;</a></span>ParseCategoryId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TransactionController::ParseCategoryId </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>category</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ParseCategoryId returns the category id when the category name is given. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">category</td><td>is the name of the category </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>category id </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="transactioncontroller_8cpp_source.html#l00039">39</a> of file <a class="el" href="transactioncontroller_8cpp_source.html">transactioncontroller.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_transaction_controller_aaadbe314c314300d5f546ddcf7437c24_cgraph.png" border="0" usemap="#aclass_transaction_controller_aaadbe314c314300d5f546ddcf7437c24_cgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>development/Gerbil_expense_tracker/<a class="el" href="transactioncontroller_8h_source.html">transactioncontroller.h</a></li>
-<li>development/Gerbil_expense_tracker/transactioncontroller.cpp</li>
+<li>C:/Users/alwis/OneDrive - University of Plymouth/Documents/Workspace/major/MP-201119-03-9652 (Gerbil)/development/Gerbil_expense_tracker/<a class="el" href="transactioncontroller_8h_source.html">transactioncontroller.h</a></li>
+<li>C:/Users/alwis/OneDrive - University of Plymouth/Documents/Workspace/major/MP-201119-03-9652 (Gerbil)/development/Gerbil_expense_tracker/<a class="el" href="transactioncontroller_8cpp_source.html">transactioncontroller.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

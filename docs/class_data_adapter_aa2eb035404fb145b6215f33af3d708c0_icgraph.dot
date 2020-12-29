@@ -1,0 +1,15 @@
+digraph "DataAdapter::ReadAccounts"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="DataAdapter::ReadAccounts",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="ReadAccounts loads account details to the QTableView model."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="DataAdapter::LoadAccountData",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_data_adapter.html#a7ecfe908caa813d2664e31d332a17d13",tooltip="LoadAccountData load account details to the QTableView and account names to the QComboBox at the same..."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Dashboard::Dashboard",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_dashboard.html#a937d0e0c1b405a283f67a95eadea3e04",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="DataAdapter::LoadTransactionData",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_data_adapter.html#a5bcb86f816305fd02bfd974e11a533f5",tooltip="LoadTransactionData loads all the transactions that are happen within the database."];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

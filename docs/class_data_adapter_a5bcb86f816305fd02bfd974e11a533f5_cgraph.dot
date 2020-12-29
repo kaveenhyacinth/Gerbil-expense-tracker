@@ -1,0 +1,26 @@
+digraph "DataAdapter::LoadTransactionData"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="DataAdapter::LoadTransactionData",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="LoadTransactionData loads all the transactions that are happen within the database."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="DataAdapter::ReadAccounts",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_data_adapter.html#aa2eb035404fb145b6215f33af3d708c0",tooltip="ReadAccounts loads account details to the QTableView model."];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="DbGateway::Connect",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_db_gateway.html#a0f140ea53b9f81c7ecadfb2f4e7710a7",tooltip=" "];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="DbGateway::Disconnect",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_db_gateway.html#a9013808dc47738faca00519117e539e3",tooltip=" "];
+  Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="DbGateway::getDb",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_db_gateway.html#ad1cd16826c95d69924b0a1db33af0da0",tooltip=" "];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="DataAdapter::ReadCategories",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_data_adapter.html#a0cb8fa8e43a2ca625420f2ecab1a3dd7",tooltip="ReadCategories loads the category names that grouped by ref to the given QComboBox."];
+  Node6 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="DataAdapter::ReadTransactions",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_data_adapter.html#a69d7356591477f4dadc92c1f4427ffca",tooltip="ReadTransactions loads transaction details to the QTableView model."];
+  Node7 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

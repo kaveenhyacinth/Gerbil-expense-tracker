@@ -27,8 +27,9 @@
   <td id="projectlogo"><img alt="Logo" src="gerbil_logo_small.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Gerbil Money Manager
-   &#160;<span id="projectnumber">1.00V</span>
+   &#160;<span id="projectnumber">1.0.0v</span>
    </div>
+   <div id="projectbrief">One stop money management tool that allows you to manage your money</div>
   </td>
  </tr>
  </tbody>
@@ -90,52 +91,677 @@ $(document).ready(function(){initNavTree('class_data_adapter.html',''); initResi
 <div class="title">DataAdapter Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>The <a class="el" href="class_data_adapter.html" title="The DataAdapter class does basic database operations.">DataAdapter</a> class does basic database operations.  
+ <a href="class_data_adapter.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="dataadapter_8h_source.html">dataadapter.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5d1be155149e826f1e62fa1c2407e25b"><td class="memItemLeft" align="right" valign="top"><a id="a5d1be155149e826f1e62fa1c2407e25b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>ReadAccounts</b> (QComboBox *)</td></tr>
-<tr class="separator:a5d1be155149e826f1e62fa1c2407e25b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a689c907bcc803bd4cfb032017c6713eb"><td class="memItemLeft" align="right" valign="top"><a id="a689c907bcc803bd4cfb032017c6713eb"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>ReadAccounts</b> (QTableView *)</td></tr>
-<tr class="separator:a689c907bcc803bd4cfb032017c6713eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfff06859e382e5e841fdb8bf44fbaa1"><td class="memItemLeft" align="right" valign="top"><a id="abfff06859e382e5e841fdb8bf44fbaa1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>ReadCategories</b> (QComboBox *, QString)</td></tr>
-<tr class="separator:abfff06859e382e5e841fdb8bf44fbaa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2c406caf6257cea7809d53fcfc49edd"><td class="memItemLeft" align="right" valign="top"><a id="ad2c406caf6257cea7809d53fcfc49edd"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>ReadTransactions</b> (QTableView *)</td></tr>
-<tr class="separator:ad2c406caf6257cea7809d53fcfc49edd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aacefcfd1cb72abc77d7ccd14a7ef1107"><td class="memItemLeft" align="right" valign="top"><a id="aacefcfd1cb72abc77d7ccd14a7ef1107"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>LoadAccountData</b> (QTableView *, QComboBox *)</td></tr>
-<tr class="separator:aacefcfd1cb72abc77d7ccd14a7ef1107"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9bfa356521bd31761f0b0f201afcb119"><td class="memItemLeft" align="right" valign="top"><a id="a9bfa356521bd31761f0b0f201afcb119"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>LoadTransactionData</b> (QTableView *, QComboBox *, QComboBox *, QComboBox *, QComboBox *)</td></tr>
-<tr class="separator:a9bfa356521bd31761f0b0f201afcb119"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f8cd2767406216cabbce96f6b6bf40c"><td class="memItemLeft" align="right" valign="top"><a id="a8f8cd2767406216cabbce96f6b6bf40c"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>UpdateAccountIncome</b> (int, int)</td></tr>
-<tr class="separator:a8f8cd2767406216cabbce96f6b6bf40c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf7fa5c6f1a4a6310a33350d92aa0698"><td class="memItemLeft" align="right" valign="top"><a id="aaf7fa5c6f1a4a6310a33350d92aa0698"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>UpdateAccountExpense</b> (int, int)</td></tr>
-<tr class="separator:aaf7fa5c6f1a4a6310a33350d92aa0698"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af53205e39582985683d73f6794573db4"><td class="memItemLeft" align="right" valign="top"><a id="af53205e39582985683d73f6794573db4"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>FetchTotalByType</b> (QString)</td></tr>
-<tr class="separator:af53205e39582985683d73f6794573db4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a133ebd505c71791fb2ad358076851b89"><td class="memItemLeft" align="right" valign="top"><a id="a133ebd505c71791fb2ad358076851b89"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>FetchTotalOfTypeByDate</b> (QString, QDate, QDate)</td></tr>
-<tr class="separator:a133ebd505c71791fb2ad358076851b89"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8aee113889458b4ebe0379736aa957b4"><td class="memItemLeft" align="right" valign="top"><a id="a8aee113889458b4ebe0379736aa957b4"></a>
-QString&#160;</td><td class="memItemRight" valign="bottom"><b>FetchTotalBalance</b> ()</td></tr>
+<tr class="memitem:a3c6c2820ec98122054b1c73b4431048a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_adapter.html#a3c6c2820ec98122054b1c73b4431048a">DataAdapter</a> ()</td></tr>
+<tr class="separator:a3c6c2820ec98122054b1c73b4431048a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2eb035404fb145b6215f33af3d708c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_adapter.html#aa2eb035404fb145b6215f33af3d708c0">ReadAccounts</a> (QTableView *tbl)</td></tr>
+<tr class="memdesc:aa2eb035404fb145b6215f33af3d708c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">ReadAccounts loads account details to the QTableView model.  <a href="class_data_adapter.html#aa2eb035404fb145b6215f33af3d708c0">More...</a><br /></td></tr>
+<tr class="separator:aa2eb035404fb145b6215f33af3d708c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69d7356591477f4dadc92c1f4427ffca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_adapter.html#a69d7356591477f4dadc92c1f4427ffca">ReadTransactions</a> (QTableView *tbl)</td></tr>
+<tr class="memdesc:a69d7356591477f4dadc92c1f4427ffca"><td class="mdescLeft">&#160;</td><td class="mdescRight">ReadTransactions loads transaction details to the QTableView model.  <a href="class_data_adapter.html#a69d7356591477f4dadc92c1f4427ffca">More...</a><br /></td></tr>
+<tr class="separator:a69d7356591477f4dadc92c1f4427ffca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab067740c645500a8c179a4cd42261cc7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_adapter.html#ab067740c645500a8c179a4cd42261cc7">ReadAccounts</a> (QComboBox *cmb)</td></tr>
+<tr class="memdesc:ab067740c645500a8c179a4cd42261cc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">ReadAccounts loads the account names to the given QComboBox.  <a href="class_data_adapter.html#ab067740c645500a8c179a4cd42261cc7">More...</a><br /></td></tr>
+<tr class="separator:ab067740c645500a8c179a4cd42261cc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cb8fa8e43a2ca625420f2ecab1a3dd7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_adapter.html#a0cb8fa8e43a2ca625420f2ecab1a3dd7">ReadCategories</a> (QComboBox *cmb, QString ref)</td></tr>
+<tr class="memdesc:a0cb8fa8e43a2ca625420f2ecab1a3dd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">ReadCategories loads the category names that grouped by ref to the given QComboBox.  <a href="class_data_adapter.html#a0cb8fa8e43a2ca625420f2ecab1a3dd7">More...</a><br /></td></tr>
+<tr class="separator:a0cb8fa8e43a2ca625420f2ecab1a3dd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ecfe908caa813d2664e31d332a17d13"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_adapter.html#a7ecfe908caa813d2664e31d332a17d13">LoadAccountData</a> (QTableView *tbl, QComboBox *cmb)</td></tr>
+<tr class="memdesc:a7ecfe908caa813d2664e31d332a17d13"><td class="mdescLeft">&#160;</td><td class="mdescRight">LoadAccountData load account details to the QTableView and account names to the QComboBox at the same time.  <a href="class_data_adapter.html#a7ecfe908caa813d2664e31d332a17d13">More...</a><br /></td></tr>
+<tr class="separator:a7ecfe908caa813d2664e31d332a17d13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bcb86f816305fd02bfd974e11a533f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_adapter.html#a5bcb86f816305fd02bfd974e11a533f5">LoadTransactionData</a> (QTableView *tbl, QComboBox *cmbInAcc, QComboBox *cmbInCat, QComboBox *cmbExAcc, QComboBox *cmbExCat)</td></tr>
+<tr class="memdesc:a5bcb86f816305fd02bfd974e11a533f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">LoadTransactionData loads all the transactions that are happen within the database.  <a href="class_data_adapter.html#a5bcb86f816305fd02bfd974e11a533f5">More...</a><br /></td></tr>
+<tr class="separator:a5bcb86f816305fd02bfd974e11a533f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac03194c6ee6b3de54287d75681fd7a8a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_adapter.html#ac03194c6ee6b3de54287d75681fd7a8a">UpdateAccountIncome</a> (int accountId, int incomeBalance)</td></tr>
+<tr class="memdesc:ac03194c6ee6b3de54287d75681fd7a8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">UpdateAccountIncome updates the relevant account when an income is added.  <a href="class_data_adapter.html#ac03194c6ee6b3de54287d75681fd7a8a">More...</a><br /></td></tr>
+<tr class="separator:ac03194c6ee6b3de54287d75681fd7a8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cbd32cc723751b7238133fb7a8552d1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_adapter.html#a5cbd32cc723751b7238133fb7a8552d1">UpdateAccountExpense</a> (int accountId, int expenseBalance)</td></tr>
+<tr class="memdesc:a5cbd32cc723751b7238133fb7a8552d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">UpdateAccountExpense updates the relevant account when an expense is added.  <a href="class_data_adapter.html#a5cbd32cc723751b7238133fb7a8552d1">More...</a><br /></td></tr>
+<tr class="separator:a5cbd32cc723751b7238133fb7a8552d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2551f807c7d2211516e847cc9a50fc14"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_adapter.html#a2551f807c7d2211516e847cc9a50fc14">FetchTotalByType</a> (QString recordType)</td></tr>
+<tr class="memdesc:a2551f807c7d2211516e847cc9a50fc14"><td class="mdescLeft">&#160;</td><td class="mdescRight">FetchTotalByType sum up total transaction amount based on the given type.  <a href="class_data_adapter.html#a2551f807c7d2211516e847cc9a50fc14">More...</a><br /></td></tr>
+<tr class="separator:a2551f807c7d2211516e847cc9a50fc14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a963c79bd3d203e51aab6646de0ef2c8c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_adapter.html#a963c79bd3d203e51aab6646de0ef2c8c">FetchTotalOfTypeByDate</a> (QString recordType, QDate startDate, QDate endDate)</td></tr>
+<tr class="memdesc:a963c79bd3d203e51aab6646de0ef2c8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">FetchTotalOfTypeByDate sum up total transaction amount based on the given type and date range.  <a href="class_data_adapter.html#a963c79bd3d203e51aab6646de0ef2c8c">More...</a><br /></td></tr>
+<tr class="separator:a963c79bd3d203e51aab6646de0ef2c8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a359dbe27f6748948375b7446cf351d48"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_adapter.html#a359dbe27f6748948375b7446cf351d48">FetchTotalStringByType</a> (QString recordType)</td></tr>
+<tr class="memdesc:a359dbe27f6748948375b7446cf351d48"><td class="mdescLeft">&#160;</td><td class="mdescRight">FetchTotalStringByType sum up total transaction amount based on the given type.  <a href="class_data_adapter.html#a359dbe27f6748948375b7446cf351d48">More...</a><br /></td></tr>
+<tr class="separator:a359dbe27f6748948375b7446cf351d48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63a9ba1029f0e47b2f747dfa74ee9f82"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_adapter.html#a63a9ba1029f0e47b2f747dfa74ee9f82">FetchTotalStringOfTypeByDate</a> (QString recordType, QDate startDate, QDate endDate)</td></tr>
+<tr class="memdesc:a63a9ba1029f0e47b2f747dfa74ee9f82"><td class="mdescLeft">&#160;</td><td class="mdescRight">FetchTotalStringOfTypeByDate sum up total transaction amount based on the given type and date range.  <a href="class_data_adapter.html#a63a9ba1029f0e47b2f747dfa74ee9f82">More...</a><br /></td></tr>
+<tr class="separator:a63a9ba1029f0e47b2f747dfa74ee9f82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8aee113889458b4ebe0379736aa957b4"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_adapter.html#a8aee113889458b4ebe0379736aa957b4">FetchTotalBalance</a> ()</td></tr>
+<tr class="memdesc:a8aee113889458b4ebe0379736aa957b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">FetchTotalBalance sum up total acount balance.  <a href="class_data_adapter.html#a8aee113889458b4ebe0379736aa957b4">More...</a><br /></td></tr>
 <tr class="separator:a8aee113889458b4ebe0379736aa957b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add2c82d47a4ad4ec88a05aea4486b8f0"><td class="memItemLeft" align="right" valign="top"><a id="add2c82d47a4ad4ec88a05aea4486b8f0"></a>
-QString&#160;</td><td class="memItemRight" valign="bottom"><b>FetchTotalStringByType</b> (QString)</td></tr>
-<tr class="separator:add2c82d47a4ad4ec88a05aea4486b8f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2dde7601aeb655d8fa305b30c1bc755f"><td class="memItemLeft" align="right" valign="top"><a id="a2dde7601aeb655d8fa305b30c1bc755f"></a>
-QString&#160;</td><td class="memItemRight" valign="bottom"><b>FetchTotalStringOfTypeByDate</b> (QString, QDate, QDate)</td></tr>
-<tr class="separator:a2dde7601aeb655d8fa305b30c1bc755f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The <a class="el" href="class_data_adapter.html" title="The DataAdapter class does basic database operations.">DataAdapter</a> class does basic database operations. </p>
+<dl class="section author"><dt>Author</dt><dd>Kaveen Hyacinth </dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Kaveen Hyacinth Digital © 2020 </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="dataadapter_8h_source.html#l00015">15</a> of file <a class="el" href="dataadapter_8h_source.html">dataadapter.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a3c6c2820ec98122054b1c73b4431048a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c6c2820ec98122054b1c73b4431048a">&#9670;&nbsp;</a></span>DataAdapter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DataAdapter::DataAdapter </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="dataadapter_8cpp_source.html#l00008">8</a> of file <a class="el" href="dataadapter_8cpp_source.html">dataadapter.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a8aee113889458b4ebe0379736aa957b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8aee113889458b4ebe0379736aa957b4">&#9670;&nbsp;</a></span>FetchTotalBalance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString DataAdapter::FetchTotalBalance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>FetchTotalBalance sum up total acount balance. </p>
+<dl class="section return"><dt>Returns</dt><dd>total balance as a string type </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="dataadapter_8cpp_source.html#l00383">383</a> of file <a class="el" href="dataadapter_8cpp_source.html">dataadapter.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_data_adapter_a8aee113889458b4ebe0379736aa957b4_cgraph.png" border="0" usemap="#aclass_data_adapter_a8aee113889458b4ebe0379736aa957b4_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_data_adapter_a8aee113889458b4ebe0379736aa957b4_icgraph.png" border="0" usemap="#aclass_data_adapter_a8aee113889458b4ebe0379736aa957b4_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a2551f807c7d2211516e847cc9a50fc14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2551f807c7d2211516e847cc9a50fc14">&#9670;&nbsp;</a></span>FetchTotalByType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DataAdapter::FetchTotalByType </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>recordType</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>FetchTotalByType sum up total transaction amount based on the given type. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">recordType</td><td>is the type, income or expense </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>total balance as an int type </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="dataadapter_8cpp_source.html#l00245">245</a> of file <a class="el" href="dataadapter_8cpp_source.html">dataadapter.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_data_adapter_a2551f807c7d2211516e847cc9a50fc14_cgraph.png" border="0" usemap="#aclass_data_adapter_a2551f807c7d2211516e847cc9a50fc14_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_data_adapter_a2551f807c7d2211516e847cc9a50fc14_icgraph.png" border="0" usemap="#aclass_data_adapter_a2551f807c7d2211516e847cc9a50fc14_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a963c79bd3d203e51aab6646de0ef2c8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a963c79bd3d203e51aab6646de0ef2c8c">&#9670;&nbsp;</a></span>FetchTotalOfTypeByDate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DataAdapter::FetchTotalOfTypeByDate </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>recordType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QDate&#160;</td>
+          <td class="paramname"><em>startDate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QDate&#160;</td>
+          <td class="paramname"><em>endDate</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>FetchTotalOfTypeByDate sum up total transaction amount based on the given type and date range. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">recordType</td><td>is the type, income or expense </td></tr>
+    <tr><td class="paramname">startDate</td><td>is the start point of the date range </td></tr>
+    <tr><td class="paramname">endDate</td><td>is the end point of the date range </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>total balance as an int type </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="dataadapter_8cpp_source.html#l00275">275</a> of file <a class="el" href="dataadapter_8cpp_source.html">dataadapter.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_data_adapter_a963c79bd3d203e51aab6646de0ef2c8c_cgraph.png" border="0" usemap="#aclass_data_adapter_a963c79bd3d203e51aab6646de0ef2c8c_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_data_adapter_a963c79bd3d203e51aab6646de0ef2c8c_icgraph.png" border="0" usemap="#aclass_data_adapter_a963c79bd3d203e51aab6646de0ef2c8c_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a359dbe27f6748948375b7446cf351d48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a359dbe27f6748948375b7446cf351d48">&#9670;&nbsp;</a></span>FetchTotalStringByType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString DataAdapter::FetchTotalStringByType </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>recordType</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>FetchTotalStringByType sum up total transaction amount based on the given type. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">recordType</td><td>is the type, income or expense </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>total balance as a string type </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="dataadapter_8cpp_source.html#l00309">309</a> of file <a class="el" href="dataadapter_8cpp_source.html">dataadapter.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_data_adapter_a359dbe27f6748948375b7446cf351d48_cgraph.png" border="0" usemap="#aclass_data_adapter_a359dbe27f6748948375b7446cf351d48_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_data_adapter_a359dbe27f6748948375b7446cf351d48_icgraph.png" border="0" usemap="#aclass_data_adapter_a359dbe27f6748948375b7446cf351d48_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a63a9ba1029f0e47b2f747dfa74ee9f82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63a9ba1029f0e47b2f747dfa74ee9f82">&#9670;&nbsp;</a></span>FetchTotalStringOfTypeByDate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString DataAdapter::FetchTotalStringOfTypeByDate </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>recordType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QDate&#160;</td>
+          <td class="paramname"><em>startDate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QDate&#160;</td>
+          <td class="paramname"><em>endDate</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>FetchTotalStringOfTypeByDate sum up total transaction amount based on the given type and date range. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">recordType</td><td>is the type, income or expense </td></tr>
+    <tr><td class="paramname">startDate</td><td>is the start point of the date range </td></tr>
+    <tr><td class="paramname">endDate</td><td>is the end point of the date range </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>total balance as a string type </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="dataadapter_8cpp_source.html#l00344">344</a> of file <a class="el" href="dataadapter_8cpp_source.html">dataadapter.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_data_adapter_a63a9ba1029f0e47b2f747dfa74ee9f82_cgraph.png" border="0" usemap="#aclass_data_adapter_a63a9ba1029f0e47b2f747dfa74ee9f82_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_data_adapter_a63a9ba1029f0e47b2f747dfa74ee9f82_icgraph.png" border="0" usemap="#aclass_data_adapter_a63a9ba1029f0e47b2f747dfa74ee9f82_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a7ecfe908caa813d2664e31d332a17d13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ecfe908caa813d2664e31d332a17d13">&#9670;&nbsp;</a></span>LoadAccountData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DataAdapter::LoadAccountData </td>
+          <td>(</td>
+          <td class="paramtype">QTableView *&#160;</td>
+          <td class="paramname"><em>tbl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QComboBox *&#160;</td>
+          <td class="paramname"><em>cmb</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>LoadAccountData load account details to the QTableView and account names to the QComboBox at the same time. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tbl</td><td>is the QTableView that displays the account details </td></tr>
+    <tr><td class="paramname">cmb</td><td>is the QComboBox model that displays the account names </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="dataadapter_8cpp_source.html#l00414">414</a> of file <a class="el" href="dataadapter_8cpp_source.html">dataadapter.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_data_adapter_a7ecfe908caa813d2664e31d332a17d13_cgraph.png" border="0" usemap="#aclass_data_adapter_a7ecfe908caa813d2664e31d332a17d13_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_data_adapter_a7ecfe908caa813d2664e31d332a17d13_icgraph.png" border="0" usemap="#aclass_data_adapter_a7ecfe908caa813d2664e31d332a17d13_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a5bcb86f816305fd02bfd974e11a533f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bcb86f816305fd02bfd974e11a533f5">&#9670;&nbsp;</a></span>LoadTransactionData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DataAdapter::LoadTransactionData </td>
+          <td>(</td>
+          <td class="paramtype">QTableView *&#160;</td>
+          <td class="paramname"><em>tbl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QComboBox *&#160;</td>
+          <td class="paramname"><em>cmbInAcc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QComboBox *&#160;</td>
+          <td class="paramname"><em>cmbInCat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QComboBox *&#160;</td>
+          <td class="paramname"><em>cmbExAcc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QComboBox *&#160;</td>
+          <td class="paramname"><em>cmbExCat</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>LoadTransactionData loads all the transactions that are happen within the database. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tbl</td><td>is the table view model to display transaction data model </td></tr>
+    <tr><td class="paramname">cmbInAcc</td><td>is the QComboBox model to load accounts in add income area </td></tr>
+    <tr><td class="paramname">cmbInCat</td><td>is the QComboBox model to load categories in add income area </td></tr>
+    <tr><td class="paramname">cmbExAcc</td><td>is the QComboBox model to load accounts in add expense area </td></tr>
+    <tr><td class="paramname">cmbExCat</td><td>is the QComboBox model to load categories in add expense area </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="dataadapter_8cpp_source.html#l00420">420</a> of file <a class="el" href="dataadapter_8cpp_source.html">dataadapter.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_data_adapter_a5bcb86f816305fd02bfd974e11a533f5_cgraph.png" border="0" usemap="#aclass_data_adapter_a5bcb86f816305fd02bfd974e11a533f5_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_data_adapter_a5bcb86f816305fd02bfd974e11a533f5_icgraph.png" border="0" usemap="#aclass_data_adapter_a5bcb86f816305fd02bfd974e11a533f5_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="ab067740c645500a8c179a4cd42261cc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab067740c645500a8c179a4cd42261cc7">&#9670;&nbsp;</a></span>ReadAccounts() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DataAdapter::ReadAccounts </td>
+          <td>(</td>
+          <td class="paramtype">QComboBox *&#160;</td>
+          <td class="paramname"><em>cmb</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ReadAccounts loads the account names to the given QComboBox. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cmb</td><td>is the QComboBox that displays the account names </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="dataadapter_8cpp_source.html#l00075">75</a> of file <a class="el" href="dataadapter_8cpp_source.html">dataadapter.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_data_adapter_ab067740c645500a8c179a4cd42261cc7_cgraph.png" border="0" usemap="#aclass_data_adapter_ab067740c645500a8c179a4cd42261cc7_cgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="aa2eb035404fb145b6215f33af3d708c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2eb035404fb145b6215f33af3d708c0">&#9670;&nbsp;</a></span>ReadAccounts() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DataAdapter::ReadAccounts </td>
+          <td>(</td>
+          <td class="paramtype">QTableView *&#160;</td>
+          <td class="paramname"><em>tbl</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ReadAccounts loads account details to the QTableView model. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tbl</td><td>is the QTableView model that displays the account data </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="dataadapter_8cpp_source.html#l00013">13</a> of file <a class="el" href="dataadapter_8cpp_source.html">dataadapter.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_data_adapter_aa2eb035404fb145b6215f33af3d708c0_cgraph.png" border="0" usemap="#aclass_data_adapter_aa2eb035404fb145b6215f33af3d708c0_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_data_adapter_aa2eb035404fb145b6215f33af3d708c0_icgraph.png" border="0" usemap="#aclass_data_adapter_aa2eb035404fb145b6215f33af3d708c0_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a0cb8fa8e43a2ca625420f2ecab1a3dd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cb8fa8e43a2ca625420f2ecab1a3dd7">&#9670;&nbsp;</a></span>ReadCategories()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DataAdapter::ReadCategories </td>
+          <td>(</td>
+          <td class="paramtype">QComboBox *&#160;</td>
+          <td class="paramname"><em>cmb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>ref</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ReadCategories loads the category names that grouped by ref to the given QComboBox. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cmb</td><td>is the QComboBox model that displays the category names </td></tr>
+    <tr><td class="paramname">ref</td><td>is the type of the category, income or expense </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="dataadapter_8cpp_source.html#l00102">102</a> of file <a class="el" href="dataadapter_8cpp_source.html">dataadapter.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_data_adapter_a0cb8fa8e43a2ca625420f2ecab1a3dd7_cgraph.png" border="0" usemap="#aclass_data_adapter_a0cb8fa8e43a2ca625420f2ecab1a3dd7_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_data_adapter_a0cb8fa8e43a2ca625420f2ecab1a3dd7_icgraph.png" border="0" usemap="#aclass_data_adapter_a0cb8fa8e43a2ca625420f2ecab1a3dd7_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a69d7356591477f4dadc92c1f4427ffca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69d7356591477f4dadc92c1f4427ffca">&#9670;&nbsp;</a></span>ReadTransactions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DataAdapter::ReadTransactions </td>
+          <td>(</td>
+          <td class="paramtype">QTableView *&#160;</td>
+          <td class="paramname"><em>tbl</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ReadTransactions loads transaction details to the QTableView model. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tbl</td><td>is the QTableView model that displays the transaction data </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="dataadapter_8cpp_source.html#l00040">40</a> of file <a class="el" href="dataadapter_8cpp_source.html">dataadapter.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_data_adapter_a69d7356591477f4dadc92c1f4427ffca_cgraph.png" border="0" usemap="#aclass_data_adapter_a69d7356591477f4dadc92c1f4427ffca_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_data_adapter_a69d7356591477f4dadc92c1f4427ffca_icgraph.png" border="0" usemap="#aclass_data_adapter_a69d7356591477f4dadc92c1f4427ffca_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a5cbd32cc723751b7238133fb7a8552d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cbd32cc723751b7238133fb7a8552d1">&#9670;&nbsp;</a></span>UpdateAccountExpense()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DataAdapter::UpdateAccountExpense </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>accountId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>expenseBalance</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>UpdateAccountExpense updates the relevant account when an expense is added. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">accountId</td><td>is the relevant account id </td></tr>
+    <tr><td class="paramname">expenseBalance</td><td>is the transaction amount </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true or false based on the success of the operation </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="dataadapter_8cpp_source.html#l00181">181</a> of file <a class="el" href="dataadapter_8cpp_source.html">dataadapter.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_data_adapter_a5cbd32cc723751b7238133fb7a8552d1_cgraph.png" border="0" usemap="#aclass_data_adapter_a5cbd32cc723751b7238133fb7a8552d1_cgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="ac03194c6ee6b3de54287d75681fd7a8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac03194c6ee6b3de54287d75681fd7a8a">&#9670;&nbsp;</a></span>UpdateAccountIncome()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DataAdapter::UpdateAccountIncome </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>accountId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>incomeBalance</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>UpdateAccountIncome updates the relevant account when an income is added. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">accountId</td><td>is the relevant account id </td></tr>
+    <tr><td class="paramname">incomeBalance</td><td>is the transaction amount </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true or false based on the success of the operation </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="dataadapter_8cpp_source.html#l00130">130</a> of file <a class="el" href="dataadapter_8cpp_source.html">dataadapter.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_data_adapter_ac03194c6ee6b3de54287d75681fd7a8a_cgraph.png" border="0" usemap="#aclass_data_adapter_ac03194c6ee6b3de54287d75681fd7a8a_cgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>development/Gerbil_expense_tracker/<a class="el" href="dataadapter_8h_source.html">dataadapter.h</a></li>
-<li>development/Gerbil_expense_tracker/dataadapter.cpp</li>
+<li>C:/Users/alwis/OneDrive - University of Plymouth/Documents/Workspace/major/MP-201119-03-9652 (Gerbil)/development/Gerbil_expense_tracker/<a class="el" href="dataadapter_8h_source.html">dataadapter.h</a></li>
+<li>C:/Users/alwis/OneDrive - University of Plymouth/Documents/Workspace/major/MP-201119-03-9652 (Gerbil)/development/Gerbil_expense_tracker/<a class="el" href="dataadapter_8cpp_source.html">dataadapter.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

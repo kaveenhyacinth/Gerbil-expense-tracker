@@ -1,0 +1,14 @@
+digraph "DataAdapter::FetchTotalOfTypeByDate"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="DataAdapter::FetchTotalOf\lTypeByDate",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="FetchTotalOfTypeByDate sum up total transaction amount based on the given type and date range."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="DbGateway::Connect",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_db_gateway.html#a0f140ea53b9f81c7ecadfb2f4e7710a7",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="DbGateway::Disconnect",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_db_gateway.html#a9013808dc47738faca00519117e539e3",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Util::FormatMoney",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_util.html#a75ad093cc05efe26ef40093fbee3ce6b",tooltip="FormatMoney returns int type of the balance when input the string type of the balance."];
+}

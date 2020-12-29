@@ -27,8 +27,9 @@
   <td id="projectlogo"><img alt="Logo" src="gerbil_logo_small.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Gerbil Money Manager
-   &#160;<span id="projectnumber">1.00V</span>
+   &#160;<span id="projectnumber">1.0.0v</span>
    </div>
+   <div id="projectbrief">One stop money management tool that allows you to manage your money</div>
   </td>
  </tr>
  </tbody>
@@ -90,16 +91,99 @@ $(document).ready(function(){initNavTree('class_data_visualizer.html',''); initR
 <div class="title">DataVisualizer Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>The <a class="el" href="class_data_visualizer.html" title="The DataVisualizer class renders the chart of cashflow accoring to the given inputs.">DataVisualizer</a> class renders the chart of cashflow accoring to the given inputs.  
+ <a href="class_data_visualizer.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="datavisualizer_8h_source.html">datavisualizer.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a113df1889f41863dd4435c1f87dbf31a"><td class="memItemLeft" align="right" valign="top"><a id="a113df1889f41863dd4435c1f87dbf31a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>RenderChart</b> (QWidget *, int, int)</td></tr>
-<tr class="separator:a113df1889f41863dd4435c1f87dbf31a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85917a395d4c6f3a3212586e214a2f16"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_visualizer.html#a85917a395d4c6f3a3212586e214a2f16">DataVisualizer</a> ()</td></tr>
+<tr class="separator:a85917a395d4c6f3a3212586e214a2f16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cbe1d07ef87933d7fb6a4cab10faedd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_visualizer.html#a7cbe1d07ef87933d7fb6a4cab10faedd">RenderChart</a> (QWidget *frame, int incomeBalance, int expenseBalance)</td></tr>
+<tr class="memdesc:a7cbe1d07ef87933d7fb6a4cab10faedd"><td class="mdescLeft">&#160;</td><td class="mdescRight">RenderChart renders the chart accoring to the given inputs.  <a href="class_data_visualizer.html#a7cbe1d07ef87933d7fb6a4cab10faedd">More...</a><br /></td></tr>
+<tr class="separator:a7cbe1d07ef87933d7fb6a4cab10faedd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The <a class="el" href="class_data_visualizer.html" title="The DataVisualizer class renders the chart of cashflow accoring to the given inputs.">DataVisualizer</a> class renders the chart of cashflow accoring to the given inputs. </p>
+<dl class="section author"><dt>Author</dt><dd>Kaveen Hyacinth </dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Kaveen Hyacinth Digital © 2020 </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="datavisualizer_8h_source.html#l00017">17</a> of file <a class="el" href="datavisualizer_8h_source.html">datavisualizer.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a85917a395d4c6f3a3212586e214a2f16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85917a395d4c6f3a3212586e214a2f16">&#9670;&nbsp;</a></span>DataVisualizer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DataVisualizer::DataVisualizer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="datavisualizer_8cpp_source.html#l00003">3</a> of file <a class="el" href="datavisualizer_8cpp_source.html">datavisualizer.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a7cbe1d07ef87933d7fb6a4cab10faedd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7cbe1d07ef87933d7fb6a4cab10faedd">&#9670;&nbsp;</a></span>RenderChart()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DataVisualizer::RenderChart </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>frame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>incomeBalance</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>expenseBalance</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>RenderChart renders the chart accoring to the given inputs. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">frame</td><td>is a QWidget with renders the ChartView </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="datavisualizer_8cpp_source.html#l00008">8</a> of file <a class="el" href="datavisualizer_8cpp_source.html">datavisualizer.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_data_visualizer_a7cbe1d07ef87933d7fb6a4cab10faedd_icgraph.png" border="0" usemap="#aclass_data_visualizer_a7cbe1d07ef87933d7fb6a4cab10faedd_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>development/Gerbil_expense_tracker/<a class="el" href="datavisualizer_8h_source.html">datavisualizer.h</a></li>
-<li>development/Gerbil_expense_tracker/datavisualizer.cpp</li>
+<li>C:/Users/alwis/OneDrive - University of Plymouth/Documents/Workspace/major/MP-201119-03-9652 (Gerbil)/development/Gerbil_expense_tracker/<a class="el" href="datavisualizer_8h_source.html">datavisualizer.h</a></li>
+<li>C:/Users/alwis/OneDrive - University of Plymouth/Documents/Workspace/major/MP-201119-03-9652 (Gerbil)/development/Gerbil_expense_tracker/<a class="el" href="datavisualizer_8cpp_source.html">datavisualizer.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

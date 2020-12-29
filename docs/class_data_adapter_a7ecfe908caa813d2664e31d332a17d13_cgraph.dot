@@ -1,0 +1,16 @@
+digraph "DataAdapter::LoadAccountData"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="DataAdapter::LoadAccountData",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="LoadAccountData load account details to the QTableView and account names to the QComboBox at the same..."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="DataAdapter::ReadAccounts",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_data_adapter.html#aa2eb035404fb145b6215f33af3d708c0",tooltip="ReadAccounts loads account details to the QTableView model."];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="DbGateway::Connect",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_db_gateway.html#a0f140ea53b9f81c7ecadfb2f4e7710a7",tooltip=" "];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="DbGateway::Disconnect",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_db_gateway.html#a9013808dc47738faca00519117e539e3",tooltip=" "];
+  Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="DbGateway::getDb",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_db_gateway.html#ad1cd16826c95d69924b0a1db33af0da0",tooltip=" "];
+}

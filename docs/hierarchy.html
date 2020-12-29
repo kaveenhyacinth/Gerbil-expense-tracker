@@ -27,8 +27,9 @@
   <td id="projectlogo"><img alt="Logo" src="gerbil_logo_small.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Gerbil Money Manager
-   &#160;<span id="projectnumber">1.00V</span>
+   &#160;<span id="projectnumber">1.0.0v</span>
    </div>
+   <div id="projectbrief">One stop money management tool that allows you to manage your money</div>
   </td>
  </tr>
  </tbody>
@@ -87,18 +88,20 @@ $(document).ready(function(){initNavTree('hierarchy.html',''); initResizable(); 
 <div class="title">Class Hierarchy</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock">This inheritance list is sorted roughly, but not completely, alphabetically:</div><div class="directory">
+<div class="textblock">
+<p><a href="inherits.html">Go to the graphical class hierarchy</a></p>
+This inheritance list is sorted roughly, but not completely, alphabetically:</div><div class="directory">
 <div class="levels">[detail level <span onclick="javascript:toggleLevel(1);">1</span><span onclick="javascript:toggleLevel(2);">2</span>]</div><table class="directory">
-<tr id="row_0_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_account.html" target="_self">Account</a></td><td class="desc"></td></tr>
-<tr id="row_1_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_account_controller.html" target="_self">AccountController</a></td><td class="desc"></td></tr>
-<tr id="row_2_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_data_adapter.html" target="_self">DataAdapter</a></td><td class="desc"></td></tr>
-<tr id="row_3_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_data_visualizer.html" target="_self">DataVisualizer</a></td><td class="desc"></td></tr>
-<tr id="row_4_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_db_gateway.html" target="_self">DbGateway</a></td><td class="desc"></td></tr>
+<tr id="row_0_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_account.html" target="_self">Account</a></td><td class="desc">Holds details of a account, name and balance </td></tr>
+<tr id="row_1_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_account_controller.html" target="_self">AccountController</a></td><td class="desc">Does two main account operations; create account and delete account </td></tr>
+<tr id="row_2_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_data_adapter.html" target="_self">DataAdapter</a></td><td class="desc">Does basic database operations </td></tr>
+<tr id="row_3_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_data_visualizer.html" target="_self">DataVisualizer</a></td><td class="desc">Renders the chart of cashflow accoring to the given inputs </td></tr>
+<tr id="row_4_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_db_gateway.html" target="_self">DbGateway</a></td><td class="desc">Maintains the connetction with database </td></tr>
 <tr id="row_5_"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_5_" class="arrow" onclick="toggleFolder('5_')">&#9660;</span><span class="icona"><span class="icon">C</span></span><b>QMainWindow</b></td><td class="desc"></td></tr>
-<tr id="row_5_0_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_dashboard.html" target="_self">Dashboard</a></td><td class="desc"></td></tr>
-<tr id="row_6_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_transaction.html" target="_self">Transaction</a></td><td class="desc"></td></tr>
-<tr id="row_7_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_transaction_controller.html" target="_self">TransactionController</a></td><td class="desc"></td></tr>
-<tr id="row_8_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_util.html" target="_self">Util</a></td><td class="desc"></td></tr>
+<tr id="row_5_0_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_dashboard.html" target="_self">Dashboard</a></td><td class="desc">Main window of the application where user does every operation </td></tr>
+<tr id="row_6_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_transaction.html" target="_self">Transaction</a></td><td class="desc">Holds the basic transaction data </td></tr>
+<tr id="row_7_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_transaction_controller.html" target="_self">TransactionController</a></td><td class="desc">Handles the basic transaction operations such as create, delete and parse </td></tr>
+<tr id="row_8_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_util.html" target="_self">Util</a></td><td class="desc">Does the formatting for the given strings and int types </td></tr>
 </table>
 </div><!-- directory -->
 </div><!-- contents -->

@@ -27,8 +27,9 @@
   <td id="projectlogo"><img alt="Logo" src="gerbil_logo_small.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Gerbil Money Manager
-   &#160;<span id="projectnumber">1.00V</span>
+   &#160;<span id="projectnumber">1.0.0v</span>
    </div>
+   <div id="projectbrief">One stop money management tool that allows you to manage your money</div>
   </td>
  </tr>
  </tbody>
@@ -90,25 +91,196 @@ $(document).ready(function(){initNavTree('class_util.html',''); initResizable();
 <div class="title">Util Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>The <a class="el" href="class_util.html" title="The Util class does the formatting for the given strings and int types.">Util</a> class does the formatting for the given strings and int types.  
+ <a href="class_util.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="util_8h_source.html">util.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:afc450027b46801327696a34183485285"><td class="memItemLeft" align="right" valign="top"><a id="afc450027b46801327696a34183485285"></a>
-QString&#160;</td><td class="memItemRight" valign="bottom"><b>FormatBalance</b> (QString, QString)</td></tr>
-<tr class="separator:afc450027b46801327696a34183485285"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47bfd3736f1986b14484e4999c2f1d9f"><td class="memItemLeft" align="right" valign="top"><a id="a47bfd3736f1986b14484e4999c2f1d9f"></a>
-QString&#160;</td><td class="memItemRight" valign="bottom"><b>FormatBalance</b> (int)</td></tr>
-<tr class="separator:a47bfd3736f1986b14484e4999c2f1d9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad58d1561421bababfa41ceff5cad5775"><td class="memItemLeft" align="right" valign="top"><a id="ad58d1561421bababfa41ceff5cad5775"></a>
-QStringList&#160;</td><td class="memItemRight" valign="bottom"><b>SplitBalance</b> (QString)</td></tr>
-<tr class="separator:ad58d1561421bababfa41ceff5cad5775"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01d1970e65c1dc71fae40d8317d0488d"><td class="memItemLeft" align="right" valign="top"><a id="a01d1970e65c1dc71fae40d8317d0488d"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>FormatMoney</b> (QString)</td></tr>
-<tr class="separator:a01d1970e65c1dc71fae40d8317d0488d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0670a004f4e488d0fb1256d7bb3c96ca"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_util.html#a0670a004f4e488d0fb1256d7bb3c96ca">Util</a> ()</td></tr>
+<tr class="separator:a0670a004f4e488d0fb1256d7bb3c96ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75ad093cc05efe26ef40093fbee3ce6b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_util.html#a75ad093cc05efe26ef40093fbee3ce6b">FormatMoney</a> (QString balance)</td></tr>
+<tr class="memdesc:a75ad093cc05efe26ef40093fbee3ce6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">FormatMoney returns int type of the balance when input the string type of the balance.  <a href="class_util.html#a75ad093cc05efe26ef40093fbee3ce6b">More...</a><br /></td></tr>
+<tr class="separator:a75ad093cc05efe26ef40093fbee3ce6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c5b39da98fe88eae3525de2fd114b79"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_util.html#a5c5b39da98fe88eae3525de2fd114b79">FormatBalance</a> (QString amount, QString cents)</td></tr>
+<tr class="memdesc:a5c5b39da98fe88eae3525de2fd114b79"><td class="mdescLeft">&#160;</td><td class="mdescRight">FormatBalance concatinate amount and it s cents amount together.  <a href="class_util.html#a5c5b39da98fe88eae3525de2fd114b79">More...</a><br /></td></tr>
+<tr class="separator:a5c5b39da98fe88eae3525de2fd114b79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdf3a877ce2aca07afa413ea324e106d"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_util.html#acdf3a877ce2aca07afa413ea324e106d">FormatBalance</a> (int balance)</td></tr>
+<tr class="memdesc:acdf3a877ce2aca07afa413ea324e106d"><td class="mdescLeft">&#160;</td><td class="mdescRight">FormatBalance split cents form the balance, cast those to string and finally concatinate together.  <a href="class_util.html#acdf3a877ce2aca07afa413ea324e106d">More...</a><br /></td></tr>
+<tr class="separator:acdf3a877ce2aca07afa413ea324e106d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a654b5a582319d7e88244153253e9adfb"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_util.html#a654b5a582319d7e88244153253e9adfb">SplitBalance</a> (QString balance)</td></tr>
+<tr class="memdesc:a654b5a582319d7e88244153253e9adfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">SplitBalance splits the blance into amount and cents.  <a href="class_util.html#a654b5a582319d7e88244153253e9adfb">More...</a><br /></td></tr>
+<tr class="separator:a654b5a582319d7e88244153253e9adfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The <a class="el" href="class_util.html" title="The Util class does the formatting for the given strings and int types.">Util</a> class does the formatting for the given strings and int types. </p>
+<dl class="section author"><dt>Author</dt><dd>Kaveen Hyacinth </dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Kaveen Hyacinth Digital © 2020 </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00015">15</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a0670a004f4e488d0fb1256d7bb3c96ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0670a004f4e488d0fb1256d7bb3c96ca">&#9670;&nbsp;</a></span>Util()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Util::Util </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00003">3</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="acdf3a877ce2aca07afa413ea324e106d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdf3a877ce2aca07afa413ea324e106d">&#9670;&nbsp;</a></span>FormatBalance() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString Util::FormatBalance </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>balance</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>FormatBalance split cents form the balance, cast those to string and finally concatinate together. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">balance</td><td>is the int type of money </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>concatinated balance string </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00015">15</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a5c5b39da98fe88eae3525de2fd114b79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c5b39da98fe88eae3525de2fd114b79">&#9670;&nbsp;</a></span>FormatBalance() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString Util::FormatBalance </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>amount</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>cents</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>FormatBalance concatinate amount and it s cents amount together. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">amount</td><td>is the complete number value </td></tr>
+    <tr><td class="paramname">cents</td><td>is the fraction part of the money </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>concatinated balance string </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00008">8</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_util_a5c5b39da98fe88eae3525de2fd114b79_icgraph.png" border="0" usemap="#aclass_util_a5c5b39da98fe88eae3525de2fd114b79_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a75ad093cc05efe26ef40093fbee3ce6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75ad093cc05efe26ef40093fbee3ce6b">&#9670;&nbsp;</a></span>FormatMoney()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Util::FormatMoney </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>balance</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>FormatMoney returns int type of the balance when input the string type of the balance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">balance</td><td>is the amount of money to be formatted </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the formatted int type of balance </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00031">31</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_util_a75ad093cc05efe26ef40093fbee3ce6b_icgraph.png" border="0" usemap="#aclass_util_a75ad093cc05efe26ef40093fbee3ce6b_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a654b5a582319d7e88244153253e9adfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a654b5a582319d7e88244153253e9adfb">&#9670;&nbsp;</a></span>SplitBalance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList Util::SplitBalance </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>balance</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>SplitBalance splits the blance into amount and cents. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">balance</td><td>is the string type of money </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>spplited string list of amount and cents </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00024">24</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>development/Gerbil_expense_tracker/<a class="el" href="util_8h_source.html">util.h</a></li>
-<li>development/Gerbil_expense_tracker/util.cpp</li>
+<li>C:/Users/alwis/OneDrive - University of Plymouth/Documents/Workspace/major/MP-201119-03-9652 (Gerbil)/development/Gerbil_expense_tracker/<a class="el" href="util_8h_source.html">util.h</a></li>
+<li>C:/Users/alwis/OneDrive - University of Plymouth/Documents/Workspace/major/MP-201119-03-9652 (Gerbil)/development/Gerbil_expense_tracker/<a class="el" href="util_8cpp_source.html">util.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

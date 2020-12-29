@@ -1,0 +1,22 @@
+digraph "TransactionController::CreateTransaction"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="TransactionController\l::CreateTransaction",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="CreateTransaction creates a transaction based on Transaction model."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="DbGateway::Connect",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_db_gateway.html#a0f140ea53b9f81c7ecadfb2f4e7710a7",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="DbGateway::Disconnect",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_db_gateway.html#a9013808dc47738faca00519117e539e3",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Transaction::getAccountId",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_transaction.html#ae1826f129d23d1adef40a7b24545da82",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Transaction::getAmount",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_transaction.html#a29ef4dff77312a0cec354d9fd2983b8d",tooltip=" "];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Transaction::getCategory",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_transaction.html#a48955f02a7147b9bd6f117fde6fe4519",tooltip=" "];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Transaction::getDate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_transaction.html#a58693bcc1f06dbc393dcd486f5296f23",tooltip=" "];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="Transaction::getType",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_transaction.html#a410a20eb6184082d45c21a05154a6f0a",tooltip=" "];
+}

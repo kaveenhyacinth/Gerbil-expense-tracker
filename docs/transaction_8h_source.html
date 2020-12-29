@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Gerbil Money Manager: development/Gerbil_expense_tracker/transaction.h Source File</title>
+<title>Gerbil Money Manager: C:/Users/alwis/OneDrive - University of Plymouth/Documents/Workspace/major/MP-201119-03-9652 (Gerbil)/development/Gerbil_expense_tracker/transaction.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -27,8 +27,9 @@
   <td id="projectlogo"><img alt="Logo" src="gerbil_logo_small.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Gerbil Money Manager
-   &#160;<span id="projectnumber">1.00V</span>
+   &#160;<span id="projectnumber">1.0.0v</span>
    </div>
+   <div id="projectbrief">One stop money management tool that allows you to manage your money</div>
   </td>
  </tr>
  </tbody>
@@ -87,41 +88,48 @@ $(document).ready(function(){initNavTree('transaction_8h_source.html',''); initR
 <div class="title">transaction.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef TRANSACTION_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define TRANSACTION_H</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QString&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QDate&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="class_transaction.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_transaction.html">Transaction</a></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="class_transaction.html">Transaction</a>(<span class="keywordtype">int</span>, <span class="keywordtype">int</span>, QString, QString, QDate);</div>
+<a href="transaction_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef TRANSACTION_H</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define TRANSACTION_H</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;QString&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;QDate&gt;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordtype">int</span> getAccountId();</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">int</span> getCategory();</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    QString getType();</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    QString getAmount();</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    QDate getDate();</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">int</span> accountId;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">int</span> category;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    QString type;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    QString amount;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    QDate date;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;};</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// TRANSACTION_H</span></div>
-<div class="ttc" id="aclass_transaction_html"><div class="ttname"><a href="class_transaction.html">Transaction</a></div><div class="ttdef"><b>Definition:</b> transaction.h:8</div></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_transaction.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_transaction.html">Transaction</a></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="class_transaction.html#a06b6f987f8e2ce275f472a94b4a3c8ef">Transaction</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, <span class="keywordtype">int</span> category, QString type, QString amount, QDate date);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_transaction.html#ae1826f129d23d1adef40a7b24545da82">getAccountId</a>();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_transaction.html#a48955f02a7147b9bd6f117fde6fe4519">getCategory</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    QString <a class="code" href="class_transaction.html#a410a20eb6184082d45c21a05154a6f0a">getType</a>();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    QString <a class="code" href="class_transaction.html#a29ef4dff77312a0cec354d9fd2983b8d">getAmount</a>();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    QDate <a class="code" href="class_transaction.html#a58693bcc1f06dbc393dcd486f5296f23">getDate</a>();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">int</span> accountId;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">int</span> category;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    QString type;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    QString amount;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    QDate date;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;};</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// TRANSACTION_H</span></div>
+<div class="ttc" id="aclass_transaction_html"><div class="ttname"><a href="class_transaction.html">Transaction</a></div><div class="ttdoc">The Transaction class holds the basic transaction data.</div><div class="ttdef"><b>Definition:</b> <a href="transaction_8h_source.html#l00015">transaction.h:16</a></div></div>
+<div class="ttc" id="aclass_transaction_html_a06b6f987f8e2ce275f472a94b4a3c8ef"><div class="ttname"><a href="class_transaction.html#a06b6f987f8e2ce275f472a94b4a3c8ef">Transaction::Transaction</a></div><div class="ttdeci">Transaction(int id, int category, QString type, QString amount, QDate date)</div><div class="ttdef"><b>Definition:</b> <a href="transaction_8cpp_source.html#l00003">transaction.cpp:4</a></div></div>
+<div class="ttc" id="aclass_transaction_html_a29ef4dff77312a0cec354d9fd2983b8d"><div class="ttname"><a href="class_transaction.html#a29ef4dff77312a0cec354d9fd2983b8d">Transaction::getAmount</a></div><div class="ttdeci">QString getAmount()</div><div class="ttdef"><b>Definition:</b> <a href="transaction_8cpp_source.html#l00028">transaction.cpp:28</a></div></div>
+<div class="ttc" id="aclass_transaction_html_a410a20eb6184082d45c21a05154a6f0a"><div class="ttname"><a href="class_transaction.html#a410a20eb6184082d45c21a05154a6f0a">Transaction::getType</a></div><div class="ttdeci">QString getType()</div><div class="ttdef"><b>Definition:</b> <a href="transaction_8cpp_source.html#l00023">transaction.cpp:23</a></div></div>
+<div class="ttc" id="aclass_transaction_html_a48955f02a7147b9bd6f117fde6fe4519"><div class="ttname"><a href="class_transaction.html#a48955f02a7147b9bd6f117fde6fe4519">Transaction::getCategory</a></div><div class="ttdeci">int getCategory()</div><div class="ttdef"><b>Definition:</b> <a href="transaction_8cpp_source.html#l00018">transaction.cpp:18</a></div></div>
+<div class="ttc" id="aclass_transaction_html_a58693bcc1f06dbc393dcd486f5296f23"><div class="ttname"><a href="class_transaction.html#a58693bcc1f06dbc393dcd486f5296f23">Transaction::getDate</a></div><div class="ttdeci">QDate getDate()</div><div class="ttdef"><b>Definition:</b> <a href="transaction_8cpp_source.html#l00033">transaction.cpp:33</a></div></div>
+<div class="ttc" id="aclass_transaction_html_ae1826f129d23d1adef40a7b24545da82"><div class="ttname"><a href="class_transaction.html#ae1826f129d23d1adef40a7b24545da82">Transaction::getAccountId</a></div><div class="ttdeci">int getAccountId()</div><div class="ttdef"><b>Definition:</b> <a href="transaction_8cpp_source.html#l00013">transaction.cpp:13</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_a20f56f8928770f636af0a8faf21e092.html">development</a></li><li class="navelem"><a class="el" href="dir_1bc40408b8a825aecfb643120fb9dc0d.html">Gerbil_expense_tracker</a></li><li class="navelem"><b>transaction.h</b></li>
+    <li class="navelem"><a class="el" href="dir_a20f56f8928770f636af0a8faf21e092.html">development</a></li><li class="navelem"><a class="el" href="dir_1bc40408b8a825aecfb643120fb9dc0d.html">Gerbil_expense_tracker</a></li><li class="navelem"><a class="el" href="transaction_8h.html">transaction.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.0 </li>
   </ul>
 </div>
