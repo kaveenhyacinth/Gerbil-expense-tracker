@@ -1,3 +1,9 @@
+/*!
+ * \author Kaveen Hyacinth
+ * \copyright Kaveen Hyacinth Digital © 2020
+ * \package view
+*/
+
 #ifndef DASHBOARD_H
 #define DASHBOARD_H
 
@@ -16,6 +22,9 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class Dashboard; }
 QT_END_NAMESPACE
 
+/*!
+ * \brief The Dashboard class is the main window of the application where user does every operation
+ */
 class Dashboard : public QMainWindow
 {
     Q_OBJECT

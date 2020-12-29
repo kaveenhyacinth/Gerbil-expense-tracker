@@ -249,9 +249,6 @@ int DataAdapter::FetchTotalByType(QString recordType)
     QSqlQuery qry;
     int balance = 0;
 
-//    QDate date = QDate::currentDate().addDays(-30);
-//    qDebug() << "Date debugger at fetchTotalByType" << date;
-
     if(!db.Connect()) {
         qDebug() << "Failed to open the database connection @ FetchTotalIncome";
         return -1;
