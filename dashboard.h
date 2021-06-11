@@ -1,3 +1,8 @@
+/*!
+ * \author Kaveen Hyacinth
+ * \copyright Kaveen Hyacinth Digital © 2020
+*/
+
 #ifndef DASHBOARD_H
 #define DASHBOARD_H
 
@@ -16,6 +21,9 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class Dashboard; }
 QT_END_NAMESPACE
 
+/*!
+ * \brief The Dashboard class is the main window of the application where user does every operation
+ */
 class Dashboard : public QMainWindow
 {
     Q_OBJECT
@@ -26,7 +34,9 @@ public:
 
 private slots:
     void on_btnTrInAdd_clicked();
+
     void on_btnAccountAdd_clicked();
+
     void on_btnAccountDelete_clicked();
 
     void on_btnTrExAdd_clicked();
@@ -36,6 +46,10 @@ private slots:
     void on_btnTrExClear_clicked();
 
     void on_btnAccountClear_clicked();
+
+    void on_btnFilter_clicked();
+
+    void on_btnReset_clicked();
 
 private:
     Ui::Dashboard *ui;

@@ -1,0 +1,16 @@
+digraph "AccountController::CreateAccount"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="AccountController::\lCreateAccount",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="CreateAccount create an account in the database."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="DbGateway::Connect",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_db_gateway.html#a0f140ea53b9f81c7ecadfb2f4e7710a7",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="DbGateway::Disconnect",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_db_gateway.html#a9013808dc47738faca00519117e539e3",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Account::getAccountName",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_account.html#a47a5cec6fe6534380141f4d7a5ecd85a",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Account::getBalance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_account.html#a04748482e6824c6ee07b287d99a11d6c",tooltip=" "];
+}

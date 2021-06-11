@@ -1,0 +1,54 @@
+digraph "DbGateway::Disconnect"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="DbGateway::Disconnect",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="AccountController::\lCreateAccount",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_account_controller.html#ac61e5af000b619e5ff2364e9db143006",tooltip="CreateAccount create an account in the database."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="TransactionController\l::CreateTransaction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_transaction_controller.html#a2f40e5157d115d10d36d1c0525b77f2d",tooltip="CreateTransaction creates a transaction based on Transaction model."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="AccountController::\lDeleteAccount",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_account_controller.html#a9a785cfa8b745d7e87e8c1f4de3e669e",tooltip="DeleteAccount deletes an account based on its name."];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="TransactionController\l::DeleteTransactionByAccount",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_transaction_controller.html#a71be996714f01e6ada85efaf1a8181c0",tooltip="DeleteTransactionByAccount deletes a transaction based on its account id field."];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="DataAdapter::FetchTotalBalance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_data_adapter.html#a8aee113889458b4ebe0379736aa957b4",tooltip="FetchTotalBalance sum up total acount balance."];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Dashboard::Dashboard",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_dashboard.html#a937d0e0c1b405a283f67a95eadea3e04",tooltip=" "];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="DataAdapter::FetchTotalByType",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_data_adapter.html#a2551f807c7d2211516e847cc9a50fc14",tooltip="FetchTotalByType sum up total transaction amount based on the given type."];
+  Node8 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="DataAdapter::FetchTotalOf\lTypeByDate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_data_adapter.html#a963c79bd3d203e51aab6646de0ef2c8c",tooltip="FetchTotalOfTypeByDate sum up total transaction amount based on the given type and date range."];
+  Node9 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="DataAdapter::FetchTotalString\lByType",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_data_adapter.html#a359dbe27f6748948375b7446cf351d48",tooltip="FetchTotalStringByType sum up total transaction amount based on the given type."];
+  Node10 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="DataAdapter::FetchTotalString\lOfTypeByDate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_data_adapter.html#a63a9ba1029f0e47b2f747dfa74ee9f82",tooltip="FetchTotalStringOfTypeByDate sum up total transaction amount based on the given type and date range."];
+  Node11 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="TransactionController\l::ParseAccountId",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_transaction_controller.html#a793b6222ae260176079137b9f2f79bac",tooltip="ParseAccountId returns the account id when the account name is given."];
+  Node1 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="TransactionController\l::ParseCategoryId",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_transaction_controller.html#aaadbe314c314300d5f546ddcf7437c24",tooltip="ParseCategoryId returns the category id when the category name is given."];
+  Node1 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="DataAdapter::ReadAccounts",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_data_adapter.html#aa2eb035404fb145b6215f33af3d708c0",tooltip="ReadAccounts loads account details to the QTableView model."];
+  Node14 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="DataAdapter::LoadAccountData",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_data_adapter.html#a7ecfe908caa813d2664e31d332a17d13",tooltip="LoadAccountData load account details to the QTableView and account names to the QComboBox at the same..."];
+  Node15 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="DataAdapter::LoadTransactionData",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_data_adapter.html#a5bcb86f816305fd02bfd974e11a533f5",tooltip="LoadTransactionData loads all the transactions that are happen within the database."];
+  Node16 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="DataAdapter::ReadCategories",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_data_adapter.html#a0cb8fa8e43a2ca625420f2ecab1a3dd7",tooltip="ReadCategories loads the category names that grouped by ref to the given QComboBox."];
+  Node17 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="DataAdapter::ReadTransactions",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_data_adapter.html#a69d7356591477f4dadc92c1f4427ffca",tooltip="ReadTransactions loads transaction details to the QTableView model."];
+  Node18 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node19 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 [label="DataAdapter::UpdateAccount\lExpense",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_data_adapter.html#a5cbd32cc723751b7238133fb7a8552d1",tooltip="UpdateAccountExpense updates the relevant account when an expense is added."];
+  Node1 -> Node20 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node20 [label="DataAdapter::UpdateAccount\lIncome",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_data_adapter.html#ac03194c6ee6b3de54287d75681fd7a8a",tooltip="UpdateAccountIncome updates the relevant account when an income is added."];
+}
